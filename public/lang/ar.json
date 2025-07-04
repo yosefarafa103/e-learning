@@ -1,0 +1,49 @@
+{
+  "exploreCourses": "استكشف الدورات",
+  "perfectCourse": "ابحث عن الدورة المثالية لتعزيز مهاراتك ومعرفتك",
+  "subject": {
+    "title": "المادة الدراسية",
+    "options": [""]
+  },
+  "level": {
+    "title": "المستوي",
+    "levels": {
+      "level1": "المستوي 1",
+      "level2": "المستوي 2",
+      "level3": "المستوي 3",
+      "level4": "المستوي 4"
+    }
+  },
+  "duration": {
+    "title": "المدة",
+    "options": [""]
+  },
+  "languge": {
+    "title": "اللغة",
+    "options": [""]
+  },
+  "courses": "الدورات",
+  "explore": "تصفح",
+  "instructors": "المدربون",
+  "login": "تسجيل الدخول",
+  "featuredCourses": "الدورات المميزة",
+  "allCourses": "جميع الدورات",
+  "overview": "نبذه عن الدورة",
+  "content": "المحتوي",
+  "instructor": "المدرب",
+  "reviews": "ملاحظات الطلاب",
+  "collectCourse": "الالتحاق بالدورة",
+  "instructorSentins": "تعرف علي افضل المدربين في مختلف المجالات",
+  "myAccount": "حسابي",
+  "logout": "تسجيل خروج",
+  "fullName": "الاسم الكامل",
+  "email": "البريد الإلكتروني",
+  "bio": "نبذة",
+  "currentPassword": "كلمة المرور الحالية",
+  "newPassword": "كلمة المرور الجديدة",
+  "confirmPassword": "تأكيد كلمة المرور",
+  "preferredLanguages": "اللغات المفضلة",
+  "settings": "الإعدادات",
+  "submit": "إرسال",
+  "changePassword": "تغيير كلمة المرور"
+}
