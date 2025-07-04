@@ -13,9 +13,9 @@ const AllCoursesSection = () => {
             <h3 className="text-xl font-bold mt-8 mb-2"> {t("allCourses")} </h3>
             <Separator />
             <section className="my-5 grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-2">
-                <Course description="lorem aaaa" title="Introdution To Markting" img={img} />
-                <Course description="lorem aaaa" title="Introdution To Markting" img={img} />
-                <Course description="lorem aaaa" title="Introdution To Markting" img={img} />
+                <Course link='' id={1} description="lorem aaaa" title="Introdution To Markting" img={img} />
+                <Course link='' id={2} description="lorem aaaa" title="Introdution To Markting" img={img} />
+                <Course link='' id={3} description="lorem aaaa" title="Introdution To Markting" img={img} />
             </section>
         </>
     )
