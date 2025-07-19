@@ -13,9 +13,7 @@ const HeaderMobile = () => {
     { link: "/instructors", title: "المدربين" }
     ]
     const [isOpen, setIsOpen] = useState(false);
-    console.log(isOpen);
     useEffect(() => {
-
         return () => {
             setIsOpen(false)
         }

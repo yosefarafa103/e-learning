@@ -1,9 +1,9 @@
 import { StaticImageData } from "next/image";
 
 export interface Course {
-  id: number;
+  id: string;
   title: string;
-  img: StaticImageData;
+  img: string;
   description?: string;
   link: string;
   overview?: string;

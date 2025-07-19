@@ -24,5 +24,9 @@
   "preferredLanguages": "Preferred Languages",
   "settings": "Settings",
   "submit": "Submit",
-  "changePassword": "Change Password"
+  "changePassword": "Change Password",
+  "search": "Search",
+  "showMore": "Show More",
+  "showLess": "Show Less",
+  "bookCourse": "Buy This Course For: "
 }

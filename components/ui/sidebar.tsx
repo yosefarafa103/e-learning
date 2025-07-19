@@ -128,7 +128,6 @@ function SidebarProvider({
     [state, open, setOpen, isMobile, openMobile, setOpenMobile, toggleSidebar]
   )
   const { dir } = useDirection();
-  console.log(state, open);
   const path = usePathname();
 
   return (
@@ -144,7 +143,7 @@ function SidebarProvider({
             } as React.CSSProperties
           }
           className={cn(
-            "group/sidebar-wrapper has-data-[variant=inset]:bg-sidebar w-full min-h-svh", dir === "right" && open ? "mr-auto" : "ml-auto", open ? "sm:!w-[calc(100%-260px)]" : "!w-full",
+            "group/sidebar-wrapper has-data-[variant=inset]:bg-sidebar w-full min-h-svh", dir === "right" && open ? "mr-auto" : "ml-auto", open && path !== "/messages" ? "sm:!w-[calc(100%-260px)]" : "!w-full", path === "/messages" && "sm:!w-[calc(100%-180px)]", dir === "right" ? "mr-auto" : "ml-auto",
             className
           )}
           {...props}

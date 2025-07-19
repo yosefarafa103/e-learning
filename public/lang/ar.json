@@ -45,5 +45,14 @@
   "preferredLanguages": "اللغات المفضلة",
   "settings": "الإعدادات",
   "submit": "إرسال",
-  "changePassword": "تغيير كلمة المرور"
+  "changePassword": "تغيير كلمة المرور",
+  "search": "ابحث",
+  "showMore": "عرض المزيد",
+  "showLess": "عرض أقل",
+  "bookCourse": "اشتر الدورة الان!",
+  "our Community": {
+    "title": "مجتمعنا",
+    "headPageTitle": "المجتمع",
+    "headPageDescription": "انضم الي المجتمع للتواصل مع الطلاب والمعلمين"
+  }
 }
