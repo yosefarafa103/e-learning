@@ -1,11 +1,14 @@
-import Tabs from "@/components/pages/myCourses/Tabs"
-import WrapperTabsContent from "@/components/pages/myCourses/WrapperTabsContent"
-const page = () => {
+import { getSignInUser } from "@/helpers/getSignInUser"
+import { redirect } from "next/navigation";
 
+
+const page = async () => {
+    const user = await getSignInUser();
+    if (!user) return redirect("/login");
     return (
         <>
-            <Tabs tabs={["All", "Inprogress", "Completed",]} />
-            <WrapperTabsContent />
+
+            page
         </>
     )
 }

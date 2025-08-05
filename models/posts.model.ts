@@ -1,21 +1,12 @@
 
-import { model, Schema, ObjectId } from "mongoose"
-
-export interface IPost {
-    author: ObjectId
-    content: string;
-    tags?: string[];
-    likes?: number;
-    visibility?: 'public' | 'private' | 'followers';
-
-    replies?: []
-    createdAt?: Date;
-    updatedAt?: Date;
-}
+import { IPost } from "@/types/courses";
+import { model, Schema,  } from "mongoose"
+import User from "@/models/user.model"
+import Comments from "@/models/comment.model"
 
 const postSchema = new Schema<IPost>(
     {
-        author: { type: Schema.Types.ObjectId, ref: "User", required: true },
+        author: { type: Schema.Types.ObjectId, ref: User, required: true },
         content: {
             type: String, required: [true, "Post Should Have Content"],
         },
@@ -29,7 +20,7 @@ const postSchema = new Schema<IPost>(
             enum: ["public", "private", "followers"],
             default: "public",
         },
-        replies: [{ type: Schema.Types.ObjectId, ref: "Post", default: [] }],
+        replies: [{ type: Schema.Types.ObjectId, ref: Comments, default: [] }],
     },
     {
         timestamps: true,

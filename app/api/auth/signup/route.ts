@@ -3,11 +3,12 @@ import User from "@/models/user.model"
 import { dbConnection } from "@/lib/db";
 export async function POST(req: Request) {
 
-    if (!req.headers.get("haveAccess"))return Response.json("You Are Unauthorized To This EndPoint!", { status: 401 })
+    if (!req.headers.get("haveAccess")) return Response.json("You Are Unauthorized To This EndPoint!", { status: 401 })
     await dbConnection()
+
     try {
-        const { email, name, password, }: IUser = await req.json();
-        const user = await User.create({ email, name, password });
+        const { email, name, password, role }: IUser = await req.json();
+        const user = await User.create({ email, name, password, role });
         console.log(user);
         return Response.json({
             status: "User Success",

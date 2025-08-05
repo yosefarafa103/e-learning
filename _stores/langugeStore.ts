@@ -9,7 +9,7 @@ interface langStore {
 }
 
 const langugeStore = create<langStore>((set) => ({
-  currentLanguge: localStorage.getItem("lan") || Languges.arabic,
+  currentLanguge: typeof window !== 'undefined' && localStorage.getItem("lan") || Languges.arabic,
   setCurrentLanguge(val) {
     set({ currentLanguge: val });
   },

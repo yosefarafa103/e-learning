@@ -1,8 +1,7 @@
 import Heading from "@/components/atoms/Heading";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
-import img from "@/app/_assets/emmanuel-serratrice-black-guy-disney-03.jpg";
-import { YouTubeChannel, YouTubeChannelListResponse } from "@/types/videos";
+import { YouTubeChannelListResponse } from "@/types/videos";
 
 export default function Instructor({ channel }: { channel: YouTubeChannelListResponse }) {
     console.log();

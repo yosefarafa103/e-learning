@@ -1,8 +1,7 @@
+"use client"
 import { LoginForm } from "@/components/login-form"
 import logo from "@/app/_assets/logo.png"
-import { useSession } from "next-auth/react";
 export default function LoginPage() {
-
     return (
         <div className="bg-muted flex min-h-[calc(100vh-200px)] flex-col items-center justify-center gap-6 p-6">
             <div className="flex w-full max-w-sm flex-col gap-2 justify-center">

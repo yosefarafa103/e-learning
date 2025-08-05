@@ -1,6 +1,5 @@
-import PageContent from "@/components/pages/settings/PageContent";
 import type { Metadata } from "next";
-
+import PageContent from "@/components/pages/settings/PageContent";
 const metadata: Metadata = {
     title: "Settings",
     description: "Settings Page"

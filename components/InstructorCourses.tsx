@@ -4,14 +4,11 @@ import Heading from "./atoms/Heading"
 import Course from "./pages/instructors/Course"
 import { Separator } from "./ui/separator"
 import { useTranslation } from "react-i18next"
-
 const InstructorCourses = () => {
     const { t } = useTranslation()
-
     return (
         <>
             <section className="mt-10">
-
                 <Heading title={t("courses")} />
                 <Separator className="my-5" />
                 {CoursesData.map((el) => (

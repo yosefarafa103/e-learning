@@ -163,7 +163,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const { dir } = useDirection();
   const { t } = useTranslation()
   return (
-    <Sidebar side={dir} variant="floating" {...props}>
+    <Sidebar side={dir!} variant="floating" {...props}>
       <Command>
         <SidebarHeader>
           <CommandInput className="p-3" placeholder={t("search")} />

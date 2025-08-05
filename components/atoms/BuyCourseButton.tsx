@@ -3,18 +3,19 @@
 import React from 'react'
 import { Button } from '../ui/button'
 import { useTranslation } from 'react-i18next'
-import { useMutation, useQuery } from '@tanstack/react-query';
+import { useMutation, } from '@tanstack/react-query';
 import axios from 'axios';
 import Loader from './Loader';
 interface Props {
-    price: number;
+    price: number | string;
     courseTitle: string;
     courseDescription: string;
     imgs: string[];
-    courseId: string
+    courseId: string;
+    variant?: string
 }
-const BuyCourseButton = ({ courseDescription, courseTitle, price, imgs, courseId }: Props) => {
-    const handelBuyCourse = async (body: Props) => {
+const BuyCourseButton = ({ courseDescription, courseTitle, price, imgs, courseId, variant = "blue" }: Props) => {
+    const handelBuyCourse = async (body: any) => {
         try {
             const session = await (await axios.post(`/api/checkout`, body)).data;
             console.log(session?.session);
@@ -32,7 +33,8 @@ const BuyCourseButton = ({ courseDescription, courseTitle, price, imgs, courseId
             onSuccess(data,) {
                 location.assign(data,)
             },
-        })} variant={"blue"} className="fixed bottom-5 left-5 p-8"> {!isPending ? `${t("bookCourse")} ${price}$` : <>
+            // @ts-ignore
+        })} variant={"default"} className="fixed bottom-5 left-5 p-8"> {!isPending ? `${t("bookCourse")} ${price}$` : <>
             <Loader />
         </>} </Button>
     )

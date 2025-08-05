@@ -21,4 +21,4 @@ usersSchema.pre('save', async function (next) {
 usersSchema.methods.comparePassword = async function (candidatePassword: string) {
     return bcrypt.compare(candidatePassword, this.password);
 };
-export default model("user", usersSchema)
+export default model("User", usersSchema)

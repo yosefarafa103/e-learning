@@ -1,7 +1,60 @@
-const page = () => {
+import { Separator } from "@/components/ui/separator";
+import { IPost } from "@/types/courses";
+import { format } from "date-fns";
+import Image from "next/image";
+import img from "@/app/_assets/emmanuel-serratrice-black-guy-disney-03.jpg"
+import Link from "next/link";
+import { Clock, } from "lucide-react";
+import TranslatedHeading from "@/components/atoms/TranslatedHeading";
+import AuthWrapper from "@/components/auth/AuthWrapper";
+import AuthAreaHeader from "@/components/atoms/AuthAreaHeader";
+import WrapperBody from "@/components/WrapperBody";
+
+const page = async () => {
+    const handelGetPosts = async () => {
+        try {
+            let data = await fetch(`http://localhost:3000/api/posts`).then(d => d.json())
+            return data
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    const { posts }: { status: string, posts: IPost[] } = await handelGetPosts();
+    console.log(posts);
+
     return (
-       <></>
+        <>
+            <AuthWrapper>
+                <TranslatedHeading title="commonQuestions" />
+                <section className="mt-10">
+                    {posts.map((el) => (
+                        <>
+                            <StudentCommentHead role={el.author.role} postId={el._id!} commentAuther={el.content} publishedDate={el.updatedAt!} />
+                            <Separator className="mt-4" />
+                        </>
+                    ))}
+                </section>
+            </AuthWrapper>
+            <AuthAreaHeader />
+
+        </>
     )
 }
 
 export default page
+
+
+export function StudentCommentHead({ publishedDate, commentAuther, postId, role }: { publishedDate: Date, commentAuther: string, postId: string, role: "student" | "teacher" }) {
+    return (
+        <>
+            <Link href={`/posts/${postId}`} className="center-flex mt-5">
+                <Image src={img} height={60} width={60} alt="s" className="rounded-[50%]" />
+                <div className="flex flex-col gap-1">
+                    <h3 className="text-lg font-semibold"> {commentAuther!?.slice(0, 10)} </h3>
+                    <p className="text-muted-foreground text-sm flex items-center gap-1" title={format(publishedDate, "EEEE, MMMM d, yyyy")}> <Clock className="text-xs" /> {format(publishedDate, "EEEE, MMMM d, yyyy")} </p>
+                    <div>{role} </div>
+                </div>
+            </Link>
+        </>
+    )
+}

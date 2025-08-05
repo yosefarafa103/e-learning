@@ -21,7 +21,8 @@ const page = async () => {
     return (
         <WrapperBody>
             {data.items.map((el) => (
-                <Course id={el.id.playlistId!} title={el.snippet.title} img={el.snippet.thumbnails.high.url} />
+                // @ts-ignore
+                <Course id={+el.id.playlistId!} title={el.snippet.title} img={el.snippet.thumbnails.high.url} />
             ))}
         </WrapperBody>
     )

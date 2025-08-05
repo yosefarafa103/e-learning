@@ -28,5 +28,11 @@
   "search": "Search",
   "showMore": "Show More",
   "showLess": "Show Less",
-  "bookCourse": "Buy This Course For: "
+  "bookCourse": "Buy This Course For: ",
+  "commonQuestions": "common Questions",
+  "our Community": {
+    "title": "Our Community",
+    "headPageTitle": "our Community",
+    "headPageDescription": "Join the community to connect with students and teachers."
+  }
 }

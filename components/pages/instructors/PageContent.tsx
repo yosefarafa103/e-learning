@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 import PersonBlock from '@/components/atoms/PersonBlock'
 import WrapperBody from '@/components/WrapperBody'
 import img from "@/app/_assets/emmanuel-serratrice-black-guy-disney-03.jpg"
@@ -11,18 +11,17 @@ import InstructorCourses from '@/components/InstructorCourses'
 import FullHeading from '@/components/molecules/FullHeading'
 import { useTranslation } from 'react-i18next'
 const PageContent = () => {
-    const { t } = useTranslation();
+    // const { t } = useTranslation();
     return (
         <>
             <WrapperBody>
-                <FullHeading lanKey={t("instructors")} desc={t("instructorSentins")} />
+                {/* <FullHeading lanKey={t("instructors")} desc={t("instructorSentins")} /> */}
                 <Carousel
                     opts={{
                         align: "start",
                         loop: true
                     }}
                     className="w-full "
-
                 >
                     <CarouselContent>
                         {new Array(10).fill("0").map(() => (

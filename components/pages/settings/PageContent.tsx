@@ -1,7 +1,6 @@
 "use client";
 import dynamic from "next/dynamic";
 import { useTranslation } from "react-i18next";
-import useLangugeStore from "@/_stores/langugeStore";
 import { handelChangeLanguge } from "@/utils/handelChangeLanguge";
 import { memo, Suspense } from "react";
 import { Label } from "@/components/ui/label";
@@ -14,7 +13,6 @@ const Combobox = dynamic(() => import("@/components/atoms/ComboBox"));
 const ChangePasswordForm = dynamic(() => import("./ChangePasswordForm"));
 
 const PageContent = () => {
-    const setLanguge = useLangugeStore((s) => s.setCurrentLanguge)
     const { t } = useTranslation();
     const frameworks = [
         {
@@ -30,7 +28,6 @@ const PageContent = () => {
     return (
         <>
             <Suspense fallback={<Loader />} >
-
                 <Heading title={`${t("settings")}`} />
                 <SettingsForm />
                 <Label asChild>

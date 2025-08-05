@@ -12,7 +12,7 @@ const CourseOverView = React.lazy(() => import("./CourseOverView"));
 const CourseContent = React.lazy(() => import("./CourseContent"));
 const Instructor = React.lazy(() => import("./Instructor"));
 
-const ContentTabs = ({ playList, comments, channel }: { playList: YouTubeSearchResponse, comments: CommentThreadListResponse, channel: YouTubeChannelListResponse }) => {
+const ContentTabs = ({ playList, comments, channel }: { playList: Pick<YouTubeSearchResponse, "items">, comments: CommentThreadListResponse, channel: YouTubeChannelListResponse }) => {
     const [tab, setTab] = useState<number>(0);
     const { t } = useTranslation();
     

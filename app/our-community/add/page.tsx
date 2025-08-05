@@ -1,8 +1,11 @@
-import React from 'react'
+import AuthWrapper from '@/components/auth/AuthWrapper'
+import AddPostForm from '@/components/pages/our-community/AddPostForm'
 
 const page = () => {
   return (
-    <div>New</div>
+    <AuthWrapper>
+      <AddPostForm />
+    </AuthWrapper>
   )
 }
 

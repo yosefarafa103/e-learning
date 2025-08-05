@@ -18,20 +18,20 @@ export async function POST(request: Request) {
     if (!successUrl || !cancelUrl) {
       throw new Error("Missing Stripe redirect URLs in environment variables.");
     }
-
+    // @ts-ignore
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
       mode: "payment",
       line_items: [
         {
           price_data: {
-            currency: "eur",
+            currency: "usd",
             product_data: {
               name: courseTitle,
               description: courseDescription,
               images: imgs,
             },
-            unit_amount: price,
+            unit_amount: `${price}00`,
           },
           quantity: 1,
         },

@@ -16,5 +16,5 @@
   @apply max-sm:text-sm;
 }
 .center-flex {
-  @apply flex items-center gap-3 max-sm:gap-2;
+  @apply flex items-center gap-2 max-sm:gap-2;
 }
