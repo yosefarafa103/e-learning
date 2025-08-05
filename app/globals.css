@@ -3,6 +3,9 @@
 @import "./custom.css";
 
 @custom-variant dark (&:is(.dark *));
+body {
+  font-family: "ar";
+}
 
 @theme inline {
   --color-background: var(--background);
@@ -120,4 +123,9 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@font-face {
+  font-family: "ar";
+  src: url(../public/fonts/Arbold.ttf);
 }
