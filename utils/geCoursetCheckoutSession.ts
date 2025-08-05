@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export async function getCourseCheckoutSession() {
-  const url = `http://localhost:3000/api/checkout`;
+  const url = `https://e-learning-eight-tau.vercel.app/api/checkout`;
   try {
     const session = await axios.get(url);
     return session.data;

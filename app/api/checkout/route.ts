@@ -13,8 +13,8 @@ export async function POST(request: Request) {
     const { price, courseDescription, courseTitle, imgs, courseId }: BodyType =
       await request.json();
     const successUrl =
-      "http://localhost:3000/checkout/success?session_id={CHECKOUT_SESSION_ID}";
-    const cancelUrl = "http://localhost:3000/api/checkout/fail";
+      "https://e-learning-eight-tau.vercel.app/checkout/success?session_id={CHECKOUT_SESSION_ID}";
+    const cancelUrl = "https://e-learning-eight-tau.vercel.app//api/checkout/fail";
     if (!successUrl || !cancelUrl) {
       throw new Error("Missing Stripe redirect URLs in environment variables.");
     }

@@ -47,7 +47,7 @@ export default function AddNewCourseForm() {
     const mutation =
         useMutation({
             mutationFn: async (values: ICourse) => {
-                return axios.post(`http://localhost:3000/api/courses/`, {
+                return axios.post(`https://e-learning-eight-tau.vercel.app/api/courses/`, {
                     title: values.title,
                     description: values.description,
                     price: values.price,

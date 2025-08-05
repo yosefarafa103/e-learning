@@ -8,7 +8,7 @@ interface CoursesClass {
 class Courses implements CoursesClass {
     private url: string
     constructor() {
-        this.url = 'http://localhost:3000/api/courses'
+        this.url = 'https://e-learning-eight-tau.vercel.app/api/courses'
     }
     async handelGetCourseById(id: string) {
         try {

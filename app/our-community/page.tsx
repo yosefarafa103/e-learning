@@ -13,7 +13,7 @@ import WrapperBody from "@/components/WrapperBody";
 const page = async () => {
     const handelGetPosts = async () => {
         try {
-            let data = await fetch(`http://localhost:3000/api/posts`).then(d => d.json())
+            let data = await fetch(`https://e-learning-eight-tau.vercel.app/api/posts`).then(d => d.json())
             return data
         } catch (error) {
             console.log(error);

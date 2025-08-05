@@ -18,7 +18,7 @@ interface PostResponse {
 }
 export async function Page({ params }: { params: Promise<{ postId: string }> }) {
     const { postId } = await params;
-    const post: PostResponse = await (await axios.get(`http://localhost:3000/api/posts/${postId}`)).data
+    const post: PostResponse = await (await axios.get(`https://e-learning-eight-tau.vercel.app/api/posts/${postId}`)).data
     const { author, content, createdAt, likes, replies } = post.post;
     return (
         <WrapperBody>

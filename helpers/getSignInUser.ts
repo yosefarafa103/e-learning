@@ -18,7 +18,7 @@ export async function getSignInUser() {
     }
 
     try {
-        const response: AxiosResponse<{ user: IUser }> = await axios.get(`http://localhost:3000/api/auth/users/${decodedToken.userId}`);
+        const response: AxiosResponse<{ user: IUser }> = await axios.get(`https://e-learning-eight-tau.vercel.app/api/auth/users/${decodedToken.userId}`);
         return response.data.user;
     } catch (error) {
         console.error("Error fetching user:", error);
