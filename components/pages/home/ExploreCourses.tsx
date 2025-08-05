@@ -38,7 +38,7 @@ const ExploreCourses = () => {
             >
                 {dropDownsData.map((el) => (
                     <DropdownMenu>
-                        <DropdownMenuTrigger className="px-3 py-2 rounded-lg bg-[#eee] flex items-center gap-2"> {t(`${el.title.toLowerCase()}.title`)} <ChevronDown /> </DropdownMenuTrigger>
+                        <DropdownMenuTrigger className="px-3 py-2 rounded-lg bg-background flex items-center gap-2"> {t(`${el.title.toLowerCase()}.title`)} <ChevronDown /> </DropdownMenuTrigger>
                         <DropdownMenuContent >
                             {el.content.map((e) => (
                                 <DropdownMenuItem> {Object.keys(ar["level"].levels).map((el) => {

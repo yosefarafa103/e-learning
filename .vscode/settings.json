@@ -1,7 +1,0 @@
-{
-    "Codegeex.Chat.fontSize": 14,
-    "Codegeex.Chat.LanguagePreference": "中文",
-    "Codegeex.Comment.LanguagePreference": "中文",
-    "Codegeex.CommitMessage.LanguagePreference": "English",
-    "Codegeex.GenerationPreference": "line by line"
-}

@@ -12,7 +12,7 @@ import HeaderLinks from "./atoms/HeaderLinks";
 const Header = () => {
     return (
         <>
-            <header className={`py-3 fixed top-0 w-full flex justify-between bg-background px-5 items-center z-[999] $`}>
+            <header className={`py-3 fixed top-0 w-full flex justify-between bg-background px-5 items-center z-[999] shadow-sm shadow-amber-50`}>
                 <section className="flex items-center gap-3 w-full max-sm:justify-between">
                     <div className="center-flex">
                         <Link href="/">

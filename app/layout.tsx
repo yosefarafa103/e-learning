@@ -1,5 +1,3 @@
-// "use client"
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import PageWrapper from "@/components/PageWrapper";
@@ -16,16 +14,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-// export async function generateMetadata(): Promise<Metadata> {
-//   return {
-//     title: "تعلّمك",
-//     description: "ابدأ رحلتك التعليمية معنا واكتشف محتوى يلهمك لتتقدّم",
-//   }
-// }
-// export const generateMetaData: Metadata = {
-//   title: "تعلّمك",
-//   description: "ابدأ رحلتك التعليمية معنا واكتشف محتوى يلهمك لتتقدّم",
-// };
+
 
 import { CookiesProvider } from 'next-client-cookies/server';
 export default function RootLayout({
@@ -34,20 +23,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning >
+    <html lang="en" >
       <head>
         <link rel="icon" href="/logo2.png" type="image/x-icon" />
+        <title>الصفحة الرئيسية | تعلمك</title>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-background antialiased dark:bg-black`}
       >
         <Toaster />
+        <Header />
         <ThemeProvider
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
+          attribute="class"
         >
-          <Header />
           <CookiesProvider>
             <PageWrapper>
               {children}

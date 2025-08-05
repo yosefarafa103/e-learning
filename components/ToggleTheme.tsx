@@ -10,14 +10,13 @@ const ToggleTheme = () => {
             <DropdownMenu>
                 <DropdownMenuTrigger>
                     <Button variant={"secondary"} size={"icon"} className="mx-2">
-
                         {theme === "dark" ?
                             <SunMoon /> :
                             <SunMedium />
                         }
                     </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent>
+                <DropdownMenuContent className="mt-5 w-[100px]">
                     <DropdownMenuItem className="w-fit" asChild onClick={() => setTheme("dark")}>
                         <Button variant={"secondary"} >
                             <SunMedium />

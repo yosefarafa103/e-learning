@@ -15,7 +15,7 @@ const ToggleLanguges = () => {
             <DropdownMenuTrigger>
                 <Languages className={"text-sm"} />
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="flex flex-col gap-2">
+            <DropdownMenuContent className="flex flex-col gap-2 mt-8">
                 <Button className="w-full" size={"icon"} onClick={() => {
                     i18n.changeLanguage("ar")
                     handelSwitchLanguge(i18n.language)

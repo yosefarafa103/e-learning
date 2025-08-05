@@ -6,6 +6,7 @@ import { Button } from './ui/button';
 import { List } from 'lucide-react';
 import Link from 'next/link';
 import { Separator } from './ui/separator';
+import ToggleLanguges from './ToggleLanguges';
 
 const HeaderMobile = () => {
     let links: { link: string, title: string }[] = [{ link: "/courses", title: "الكورسات" },
@@ -20,6 +21,7 @@ const HeaderMobile = () => {
     }, [])
     return (
         <>
+        <ToggleLanguges />
             <Collapsible open={isOpen} className="sm:hidden">
                 <CollapsibleTrigger onClick={() => setIsOpen(true)}>
                     <Button asChild size={"icon"} variant={"ghost"}>
