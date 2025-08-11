@@ -13,7 +13,8 @@ const Course = ({
     img
 }: Course) => {
     const { t
-    } = useTranslation()
+    } = useTranslation();
+    
     return (
         <section className="flex sm:justify-between max-sm:flex-col-reverse mt-5">
             <div className="column sm:w-fit mt-3">

@@ -6,9 +6,9 @@ import { NextRequest } from "next/server";
 export async function POST(req: NextRequest) {
     try {
         await dbConnection();
-        const postid = req.nextUrl.searchParams.get("postId")
+        const postid = req.nextUrl.searchParams.get("postId");
         const { author, content, }: IComment = await req.json();
-        const comment = (await Comment.create({ postId: postid, author, content }))
+        const comment = await Comment.create({ postId: postid, author, content });
         await Post.findByIdAndUpdate(postid, { $push: { replies: comment._id } }, { new: true });
         return Response.json({
             status: "Comment Created Successfully",

@@ -50,9 +50,7 @@ export async function PATCH(req: Request) {
 
     try {
         const updatedPost: IPost = await req.json();
-
         let post;
-
         if (updatedPost.replies) {
             post = await Post.findByIdAndUpdate(
                 id,
@@ -62,7 +60,6 @@ export async function PATCH(req: Request) {
         } else {
             post = await Post.findByIdAndUpdate(id, updatedPost, { new: true });
         }
-
         return NextResponse.json(
             {
                 status: "Post Updated Successfully",

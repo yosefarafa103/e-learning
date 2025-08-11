@@ -20,7 +20,8 @@ import { useForm } from "react-hook-form"
 import { useState } from "react"
 import { Loader } from "lucide-react"
 import { redirect, useRouter } from "next/navigation"
-type signupBody = Pick<IUser, "email" | "name" | "password">
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select"
+type signupBody = Pick<IUser, "email" | "name" | "password" | "role">
 type loginBody = Pick<IUser, "email" | "password">
 
 export function LoginForm({
@@ -31,6 +32,7 @@ export function LoginForm({
   const { handleSubmit, register, } = useForm()
 
   const login = async (body: loginBody) => {
+
     try {
       await axios.post(`/api/auth/signin`, body, {
         headers: {
@@ -131,6 +133,7 @@ export function SignIn() {
   const { handleSubmit, register, } = useForm()
   const signUp = async (body: signupBody) => {
     try {
+      console.log(body);
       await axios.post(`/api/auth/signup`, body, {
         headers: {
           "haveAccess": 1
@@ -145,6 +148,8 @@ export function SignIn() {
   const { mutate, isPending } = useMutation({
     mutationFn: signUp
   })
+  const [role, setRole] = useState("");
+  console.log(role);
   return (
     <Card>
       <CardHeader className="text-center">
@@ -156,7 +161,7 @@ export function SignIn() {
       <CardContent>
         {/* @ts-ignore */}
         <form onSubmit={handleSubmit((data: signupBody) => {
-          mutate(data)
+          mutate({ ...data, role: role as "student" | "teacher" })
         })}>
           <div className="grid gap-3">
             <div className="flex flex-col gap-4">
@@ -174,7 +179,7 @@ export function SignIn() {
               </Button>
             </div>
             <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
-              <span className="bg-card text-muted-foreground relative z-10 px-2">
+              <span className="bg-background text-muted-foreground relative z-10 px-2">
                 Or continue with
               </span>
             </div>
@@ -205,7 +210,22 @@ export function SignIn() {
                   {...register("password")}
                   type="password" required />
               </div>
-              <Button disabled={isPending} type="submit" className="w-full">
+              <Input name="role" type="hidden" value={role} />
+              <Select required onValueChange={(val) => setRole(val)
+              }>
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Select Account Role" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem onClick={() => setRole("student")} value={"student"}>
+                    Student
+                  </SelectItem>
+                  <SelectItem onClick={() => setRole("teacher")} value={"teacher"}>
+                    Teacher
+                  </SelectItem>
+                </SelectContent>
+              </Select>
+              <Button disabled={isPending} type="submit" className="w-full ">
                 {isPending ? "Creating Account..." : "Create Account"}
               </Button>
             </div>

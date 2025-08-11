@@ -60,7 +60,7 @@ const page = async ({ params }: Props) => {
                         <span>8h And 23m</span>
                     </Button>
                     <div className="flex gap-4 mt-4">
-                        <BuyCourseButton courseDescription={course?.description} courseId={course?._id!} price={formatNumberEU(course?.price)} imgs={[]} courseTitle={course?.title} variant='black' />
+                        <BuyCourseButton courseDescription={course?.description} courseId={course?._id!} price={+formatNumberEU(course?.price)} imgs={[]} courseTitle={course?.title} variant='black' />
                         {/* <Button className='flex-1' size={"lg"} variant={"default"}></Button> */}
                         <Button className='flex-1' size={"lg"} variant={"outline"}> <Gift /> Buy As Gift</Button>
                     </div>

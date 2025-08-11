@@ -47,7 +47,7 @@ export default function AddNewCourseForm() {
     const mutation =
         useMutation({
             mutationFn: async (values: ICourse) => {
-                return axios.post(`https://e-learning-eight-tau.vercel.app/api/courses/`, {
+                return axios.post(`https://e-learning-eight-tau.vercel.app/api/courses`, {
                     title: values.title,
                     description: values.description,
                     price: values.price,
@@ -120,16 +120,13 @@ export default function AddNewCourseForm() {
                             <FormControl>
                                 <Input
                                     placeholder="Please Enter Course Description"
-
                                     type="text"
                                     {...field} />
                             </FormControl>
-
                             <FormMessage />
                         </FormItem>
                     )}
                 />
-
                 <FormField
                     control={form.control}
                     name="course_price"
@@ -139,11 +136,9 @@ export default function AddNewCourseForm() {
                             <FormControl>
                                 <Input
                                     placeholder="Please Write Course Price "
-
                                     type="number"
                                     {...field} />
                             </FormControl>
-
                             <FormMessage />
                         </FormItem>
                     )}

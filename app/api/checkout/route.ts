@@ -31,7 +31,7 @@ export async function POST(request: Request) {
               description: courseDescription,
               images: imgs,
             },
-            unit_amount: `${price}00`,
+            unit_amount: `${price * 100}`,
           },
           quantity: 1,
         },

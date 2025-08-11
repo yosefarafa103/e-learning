@@ -20,10 +20,11 @@ const page = async () => {
     // https://www.googleapis.com/youtube/v3/search?part=snippet&q=js&type=video&maxResults=10&key=AIzaSyA6txX3U9xdlIQiGXldTC5JE-o17kDRobo
     return (
         <WrapperBody>
-            {data.items.map((el) => (
+            {data.items.map((el) => {
+                console.log(el);
                 // @ts-ignore
-                <Course id={+el.id.playlistId!} title={el.snippet.title} img={el.snippet.thumbnails.high.url} />
-            ))}
+                return <Course id={el.id.playlistId!} title={el.snippet.title} img={el.snippet.thumbnails.high.url} />
+            })}
         </WrapperBody>
     )
 }

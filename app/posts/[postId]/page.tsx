@@ -12,6 +12,9 @@ import { Clock, Section, ThumbsDown, ThumbsUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { IComment } from '@/models/comment.model';
 import { Badge } from '@/components/ui/badge';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import AddPostForm from '@/components/pages/posts/AddCommentToPost';
+import { cn } from '@/lib/utils';
 interface PostResponse {
     status: string,
     post: Pick<IPost, "author" | "content" | "createdAt" | "likes" | "replies" | "tags">
@@ -22,6 +25,14 @@ export async function Page({ params }: { params: Promise<{ postId: string }> }) 
     const { author, content, createdAt, likes, replies } = post.post;
     return (
         <WrapperBody>
+            <Dialog>
+                <DialogTrigger asChild>
+                    <Button variant={"green"} className='my-2 ml-auto'> اضف تعليق </Button>
+                </DialogTrigger>
+                <DialogContent className='border-green-400'>
+                    <AddPostForm />
+                </DialogContent>
+            </Dialog>
             <Heading title="المنشور" />
             <Separator />
             {/* @ts-ignore */}
@@ -45,19 +56,21 @@ export function Replies({ replies }: { replies: Replay[] }) {
             <Heading title='Replies' />
             {!replies?.length && "No Replies Yet!"}
             <section className='pl-5'>
-                {replies?.map((reply) => <Reply key={reply.createdAt + ""} reply={reply} />)}
+                {replies?.map((reply) =>
+                    <Reply isSubComment key={reply.createdAt + ""} reply={reply} />
+                )}
             </section>
         </>
     )
 }
 
 
-export function Reply({ reply: { author, content, createdAt, replies } }: { reply: Pick<IComment, "content" | "createdAt" | "replies" | "author"> }) {
+export function Reply({ reply: { author, content, createdAt, replies }, isSubComment = false }: { reply: Pick<IComment, "content" | "createdAt" | "replies" | "author">, isSubComment?: boolean }) {
     return (
         <>
-            <section className="center-flex mt-5">
-                <Image src={img} height={60} width={60} alt="s" className="rounded-[50%]" />
-                <div className="flex flex-col">
+            <section className={`${cn(!isSubComment ? "center-flex" : "flex gap-2 items-start")} mt-5`}>
+                <Image src={img} height={isSubComment ? 40 : 60} width={isSubComment ? 40 : 60} alt="s" className="rounded-[50%]" />
+                <div className={`flex flex-col ${cn(isSubComment ? "text-sm" : "")}`}>
                     <div className="flex gap-1 ">
                         <h3 className='mx-2 my-1 font-semibold'> {author.toString()} </h3>
                         <Badge variant={"orange"}>Student</Badge>
