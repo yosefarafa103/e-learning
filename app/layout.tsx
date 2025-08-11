@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" >
+    <html lang="en" className="dark">
       <head>
         <link rel="icon" href="/logo2.png" type="image/x-icon" />
         <title>الصفحة الرئيسية | تعلمك</title>
