@@ -17,8 +17,8 @@ const NavigationBreadCrumb = ({ courseId, course }: { courseId: string, course: 
                         <Link href="/courses"> {t('Courses'.toLowerCase())} </Link>
                     </BreadcrumbItem>
                     <BreadcrumbSeparator />
-                    <BreadcrumbItem >
-                        <Link href={`/courses/${courseId}`} className="text-sm text-black "> {course} </Link>
+                    <BreadcrumbItem>
+                        <Link href={`/courses/${courseId}`} className="text-sm text-foreground "> {course} </Link>
                     </BreadcrumbItem>
                     <BreadcrumbSeparator />
                 </BreadcrumbList>

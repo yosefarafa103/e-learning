@@ -25,3 +25,12 @@ export async function getSignInUser() {
         return null;
     }
 }
+export async function UpdateUser(id: string, user: Partial<IUser>) {
+    try {
+        const response: AxiosResponse<{ user: IUser }> = await axios.patch(`https://e-learning-eight-tau.vercel.app/api/auth/users/${id}`, user);
+        return response.data;
+    } catch (error) {
+        console.error("Error fetching user:", error);
+        return null;
+    }
+}

@@ -13,13 +13,11 @@ export default function Instructor({ channel }: { channel: YouTubeChannelListRes
             <Heading title={t("instructor")} />
             <section className="center-flex mt-4 max-sm:flex-col max-sm:!items-start">
                 <Image className="rounded-[50%] object-cover max-sm:mx-auto" width={150} height={150} src={medium!.url} alt="Instructor" />
-                <section className="column">
+                <section className="">
                     <h3 className="collapsed-link_course max-sm:text-center">{title}</h3>
-                    <p className="paragraph sepcail"> {description } </p>
+                    <p className="paragraph sepcail !text-foreground mt-5"> {description} </p>
                 </section>
             </section>
-            <p className="paragraph text-center mt-4"> Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            </p>
         </>
     );
 }

@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" >
       <head>
         <link rel="icon" href="/logo2.png" type="image/x-icon" />
         <title>الصفحة الرئيسية | تعلمك</title>
@@ -32,13 +32,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} bg-background antialiased dark:bg-black`}
       >
         <Toaster />
-        <Header />
         <ThemeProvider
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
           attribute="class"
         >
+          <Header />
           <CookiesProvider>
             <PageWrapper>
               {children}

@@ -15,7 +15,6 @@ const Instructor = React.lazy(() => import("./Instructor"));
 const ContentTabs = ({ playList, comments, channel }: { playList: Pick<YouTubeSearchResponse, "items">, comments: CommentThreadListResponse, channel: YouTubeChannelListResponse }) => {
     const [tab, setTab] = useState<number>(0);
     const { t } = useTranslation();
-    
     return (
         <>
             <section className="flex items-center gap-3 mt-4 ">

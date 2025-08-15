@@ -26,7 +26,7 @@ const StudentComment = ({ numberOfLikes, text, commentAuther, commentAutherImg, 
                     <Star size={20} fill={"#000"} />
                 ))}
             </div>
-            <p className="paragraph sm:w-[600px] "> {text} </p>
+            <p className="paragraph sm:w-[600px] !text-foreground"> {text} </p>
             <section className="center-flex !gap-2 my-4">
                 <Button variant={'ghost'} size={"icon"} className="!border-[#284b63] border-[1px] border-solid">
                     <ThumbsUp stroke="#284b63" />

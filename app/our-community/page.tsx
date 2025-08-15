@@ -20,7 +20,6 @@ const page = async () => {
         }
     }
     const { posts }: { status: string, posts: IPost[] } = await handelGetPosts();
-    console.log(posts)
     return (
         <>
             <AuthWrapper>
@@ -34,8 +33,6 @@ const page = async () => {
                     ))}
                 </section>
             </AuthWrapper>
-            <AuthAreaHeader />
-
         </>
     )
 }
@@ -51,7 +48,7 @@ export function StudentCommentHead({ publishedDate, commentAuther, postId, role,
                 <div className="flex flex-col gap-1">
                     <h3 className="text-lg font-semibold"> {commentAuther!?.slice(0, 10)} </h3>
                     <p className="text-muted-foreground text-sm flex items-center gap-1" title={format(publishedDate, "EEEE, MMMM d, yyyy")}> <Clock className="text-xs" /> {format(publishedDate, "EEEE, MMMM d, yyyy")} {<>
-                    <MessageCircle className="ml-3" /> {replies.length}
+                        <MessageCircle className="ml-3" /> {replies.length}
 
                     </>
                     } </p>

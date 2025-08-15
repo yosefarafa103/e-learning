@@ -1,14 +1,14 @@
 import { ICourse } from "@/types/courses";
 import axios from "axios";
 interface CoursesClass {
-    getCoursesData: () => Promise<ICourse[]>;
+    getCoursesData: () => Promise<{ status: string, courses: ICourse[] }>;
     handelGetCourseById: (id: string) => Promise<ICourse>;
 }
 
 class Courses implements CoursesClass {
     private url: string
     constructor() {
-        this.url = 'https://e-learning-eight-tau.vercel.app/api/courses'
+        this.url = 'http://localhost:3000/api/courses'
     }
     async handelGetCourseById(id: string) {
         try {
@@ -16,10 +16,10 @@ class Courses implements CoursesClass {
             return course.data
         } catch (err: any) {
             console.error(err);
-            throw new Error('Failed to fetch course')
+            // throw new Error('Failed to fetch course')
         }
     }
-    async getCoursesData() {
+    async getCoursesData(): Promise<{ status: string, courses: ICourse[] }> {
         try {
             const response = await axios.get(this.url);
             return response.data;

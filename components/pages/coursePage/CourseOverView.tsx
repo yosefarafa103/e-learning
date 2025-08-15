@@ -9,7 +9,7 @@ export default function CourseOverView({ overview }: Overview) {
     return (
         <>
             <Heading title={`${t("overview")}`} />
-            <p className="text-gray-950 leading-[1.5]"> {overview} </p>
+            <p className="text-foreground leading-[1.5]"> {overview} </p>
         </>
     );
 }

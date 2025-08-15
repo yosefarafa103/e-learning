@@ -11,7 +11,7 @@ export async function POST(req: Request) {
     const user: IUser = await User.findById(instructor_id) as IUser;
 
     /* 
-    Set Courses In User Account After Buying 
+  7  Set Courses In User Account After Buying 
     
     */
     // @ts-ignore

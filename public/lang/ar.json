@@ -55,6 +55,17 @@
     "headPageTitle": "المجتمع",
     "headPageDescription": "انضم الي المجتمع للتواصل مع الطلاب والمعلمين"
   },
-  "commonQuestions": "المناقشات الشائعة"
-
+  "commonQuestions": "المناقشات الشائعة",
+  "phone": "رقم الهاتف",
+  "subjects": "المواد الدراسية",
+  "role": "الدور",
+  "doesntHave": "لا يمتلك",
+  "teacher": "مدرس",
+  "editYourInfo": "تعديل معلوماتك الشخصية",
+  "forms": {
+    "required": "حقل الزامي",
+    "name": "الاسم",
+    "add": "اضافة",
+    "update": "تعديل"
+  }
 }

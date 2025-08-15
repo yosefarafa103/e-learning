@@ -10,7 +10,7 @@ const Course = ({
     id
 }: Course) => {
     return (
-        <Link href={`/courses/${id}`} className="flex flex-col relative min-h-[200px] ">
+        <Link href={`/courses/platform/${id}`} className="flex flex-col relative min-h-[200px] ">
             <Image src={img} className="object-cover rounded-xl w-full h-[250px] " alt="course" />
             <h3 className="font-semibold mt-3"> {title} </h3>
             <p className="text-gray-500"> {description} </p>

@@ -1,3 +1,5 @@
+import { ICourse } from "./courses";
+
 export interface IUser {
     _id?: string;
     name: string;
@@ -6,5 +8,7 @@ export interface IUser {
     role: 'student' | 'teacher';
     createdAt?: Date;
     updatedAt?: Date;
-    imgProfile:string
+    subjects: string[] | []
+    imgProfile: string
+    enrolled_courses?: ICourse[] | []
 }

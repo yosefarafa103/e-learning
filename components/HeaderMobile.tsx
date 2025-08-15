@@ -7,10 +7,11 @@ import { List } from 'lucide-react';
 import Link from 'next/link';
 import { Separator } from './ui/separator';
 import ToggleLanguges from './ToggleLanguges';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from './ui/dropdown-menu';
 
 const HeaderMobile = () => {
     let links: { link: string, title: string }[] = [{ link: "/courses", title: "الكورسات" },
-    { link: "/explore", title: "تصفح" },
+    // { link: "/explore", title: "تصفح" },
     { link: "/instructors", title: "المدربين" }
     ]
     const [isOpen, setIsOpen] = useState(false);
@@ -21,15 +22,37 @@ const HeaderMobile = () => {
     }, [])
     return (
         <>
-        <ToggleLanguges />
-            <Collapsible open={isOpen} className="sm:hidden">
+            <ToggleLanguges />
+            {/* <DropdownMenu>
+                <DropdownMenuTrigger>
+                    <Button asChild size={"icon"} variant={"ghost"}>
+                        <List className="sm:hidden cursor-pointer " />
+                    </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className='mt-5 w-full'>
+                    <>
+                        {links.map((l) => (
+                            <>
+                                <Button key={l.link} onClick={() => setIsOpen(!isOpen)} asChild className="w-full block" variant={"ghost"}>
+                                    <Link href={l.link} key={l.link} >
+                                        {
+                                            l.title
+                                        }
+                                    </Link>
+                                </Button>
+                                <Separator />
+                            </>
+                        ))}
+                    </>
+                </DropdownMenuContent>
+            </DropdownMenu> */}
+            <Collapsible className="sm:hidden">
                 <CollapsibleTrigger onClick={() => setIsOpen(true)}>
                     <Button asChild size={"icon"} variant={"ghost"}>
                         <List className="sm:hidden cursor-pointer " />
-
                     </Button>
                 </CollapsibleTrigger>
-                <CollapsibleContent className="fixed top-[80px] right-0 w-full bg-background z-10 ">
+                <CollapsibleContent className="fixed top-[100px] right-0 w-full bg-foreground text-background z-10 ">
                     {isOpen &&
                         <>
                             {links.map((l) => (

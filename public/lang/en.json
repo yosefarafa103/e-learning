@@ -1,4 +1,22 @@
 {
+  "subject": {
+    "title": "Subject"
+  },
+  "level": {
+    "title": "Level",
+    "levels": {
+      "level1": "Level 1",
+      "level2": "Level 2",
+      "level3": "Level 3",
+      "level4": "Level 4"
+    }
+  },
+  "duration": {
+    "title": "Duration"
+  },
+  "languge": {
+    "title": "Languges"
+  },
   "exploreCourses": "Explore Courses",
   "perfectCourse": "Find The Prefect Course To Enhance Your Skills And Knowlage",
   "courses": "Courses",
@@ -34,5 +52,17 @@
     "title": "Our Community",
     "headPageTitle": "our Community",
     "headPageDescription": "Join the community to connect with students and teachers."
+  },
+  "phone": "Phone",
+  "subjects": "Subjects",
+  "role": "Role",
+  "doesntHave": "Dosent Have",
+  "teacher": "Teacher",
+  "editYourInfo": "Edit Your Informations",
+  "forms": {
+    "required": "Requried Field",
+    "name": "Name",
+    "add": "Add",
+    "update": "Update"
   }
 }
