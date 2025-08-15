@@ -45,7 +45,7 @@ const formSchema = z.object({
 export default function UpdatInformationForm({ userId }: { userId: string }) {
     async function UpdateUser(id: string, user: Partial<IUser>) {
         try {
-            const response: AxiosResponse<{ user: IUser }> = await axios.patch(`http://localhost:3000/api/auth/users/${id}`, user);
+            const response: AxiosResponse<{ user: IUser }> = await axios.patch(`https://e-learning-eight-tau.vercel.app/api/auth/users/${id}`, user);
             return response.data;
         } catch (error) {
             console.error("Error fetching user:", error);
