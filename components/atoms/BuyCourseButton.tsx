@@ -29,7 +29,7 @@ const BuyCourseButton = ({ courseDescription, courseTitle, price, imgs, courseId
         mutationFn: handelBuyCourse
     })
     return (
-        <Button disabled={isPending} onClick={() => mutate({ courseDescription, courseTitle, price, imgs, courseId, customerId }, {
+        <Button disabled={isPending} onClick={() => mutate({ courseDescription, courseTitle, price: price.toString(), imgs, courseId, customerId }, {
             onSuccess(data) {
                 location.assign(data,)
             },
