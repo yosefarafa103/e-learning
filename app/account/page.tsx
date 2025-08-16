@@ -16,7 +16,6 @@ import { useTranslation } from "react-i18next";
 
 const page = () => {
     const router = useRouter()
-    // useEffect(() => router.push("/account/my-courses"), [])
     const { dir } = useDirection();
     const { t } = useTranslation()
     return (
@@ -46,18 +45,15 @@ const page = () => {
                                 link: "/settings"
                             }
                         ].map((item) => (
-
                             <SidebarMenuItem key={item.icon + ""}>
                                 <SidebarMenuButton className="text-lg" asChild>
                                     <Link href={`/account${item.link}`}>
                                         <item.icon />
                                         {item.text}
                                     </Link>
-
                                 </SidebarMenuButton>
                             </SidebarMenuItem>
                         ))}
-
                     </SidebarMenu>
                 </SidebarContent>
                 <SidebarFooter>

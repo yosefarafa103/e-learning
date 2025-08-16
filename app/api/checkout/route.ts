@@ -6,11 +6,12 @@ interface BodyType {
   courseDescription: string;
   imgs: string[];
   courseId: string;
+  customerId: string;
 }
 export async function POST(request: Request) {
   try {
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
-    const { price, courseDescription, courseTitle, imgs, courseId }: BodyType =
+    const { price, courseDescription, courseTitle, imgs, courseId, customerId }: BodyType =
       await request.json();
     const successUrl =
       "https://e-learning-eight-tau.vercel.app/checkout/success?session_id={CHECKOUT_SESSION_ID}";
@@ -36,6 +37,10 @@ export async function POST(request: Request) {
           quantity: 1,
         },
       ],
+      metadata: {
+        userId: customerId,
+        courseId
+      },
       success_url: `${successUrl}&courseId=${courseId}`,
       cancel_url: `${cancelUrl}/cancel`,
     });

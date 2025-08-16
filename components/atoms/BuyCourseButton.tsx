@@ -1,5 +1,4 @@
 "use client"
-
 import React from 'react'
 import { Button } from '../ui/button'
 import { useTranslation } from 'react-i18next'
@@ -13,8 +12,9 @@ interface Props {
     imgs: string[];
     courseId: string;
     variant?: string
+    customerId: string
 }
-const BuyCourseButton = ({ courseDescription, courseTitle, price, imgs, courseId, variant = "blue" }: Props) => {
+const BuyCourseButton = ({ courseDescription, courseTitle, price, imgs, courseId, variant = "blue", customerId }: Props) => {
     const handelBuyCourse = async (body: any) => {
         try {
             const session = await (await axios.post(`/api/checkout`, body)).data;
@@ -29,8 +29,8 @@ const BuyCourseButton = ({ courseDescription, courseTitle, price, imgs, courseId
         mutationFn: handelBuyCourse
     })
     return (
-        <Button disabled={isPending} onClick={() => mutate({ courseDescription, courseTitle, price, imgs, courseId }, {
-            onSuccess(data,) {
+        <Button disabled={isPending} onClick={() => mutate({ courseDescription, courseTitle, price, imgs, courseId, customerId }, {
+            onSuccess(data) {
                 location.assign(data,)
             },
             // @ts-ignore

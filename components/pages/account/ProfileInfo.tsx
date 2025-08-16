@@ -24,7 +24,7 @@ const ProfileInfo = () => {
         try {
             const user = jwtDecode(getCookie("token") as string)
             // @ts-ignore
-            const response: AxiosResponse<{ user: IUser }> = await axios.get(`http://localhost:3000/api/auth/users/${user?.userId}`);
+            const response: AxiosResponse<{ user: IUser }> = await axios.get(`https://e-learning-eight-tau.vercel.app/api/auth/users/${user?.userId}`);
             return response?.data?.user
         } catch (error) {
             console.error("Error fetching user:", error);
@@ -56,7 +56,10 @@ const ProfileInfo = () => {
                             <Edit />
                         </DialogTrigger>
                         <DialogContent>
-                            <DialogTitle> {t("editYourInfo")} </DialogTitle>
+                            <DialogTitle>
+                                {t("editYourInfo")}
+                                <Separator className="mt-4" />
+                            </DialogTitle>
                             {/* @ts-ignore */}
                             <UpdatInformationForm userId={data?._id} />
                         </DialogContent>
@@ -94,7 +97,6 @@ const ProfileInfo = () => {
                                                 {/* @ts-ignore */}
                                                 {(data?.[el.toLowerCase()] && el.toLowerCase() !== "subjects") ? t(data?.[el.toLowerCase()]) || "" : el.toLowerCase() !== "subjects" && `${data?.name} ${t("doesntHave")} ${t(el.toLowerCase())}`}
                                             </p>
-                                            {/* {data[el.toLowerCase()] ? <Badge> {data?.role} </Badge> : <p> {data[el.toLowerCase()] || `${data?.name} Dosent Have ${data[el.toLowerCase()]}`} </p>} */}
                                         </div>
                                         {i < tabs.length - 1 &&
                                             <Separator className="sm:hidden" />

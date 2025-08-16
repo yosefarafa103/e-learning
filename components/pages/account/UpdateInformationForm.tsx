@@ -65,7 +65,7 @@ export default function UpdatInformationForm({ userId }: { userId: string }) {
             // MUTATION
             //  @ts-ignore
             mutate(values)
-            toast.success(">")
+            toast.success("Done!")
         } catch (error) {
             console.error("Form submission error", error);
             toast.error("Failed to submit the form. Please try again.");
@@ -75,7 +75,6 @@ export default function UpdatInformationForm({ userId }: { userId: string }) {
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mx-auto w-full py-10">
-
                 <FormField
                     control={form.control}
                     name="name"
@@ -85,7 +84,6 @@ export default function UpdatInformationForm({ userId }: { userId: string }) {
                             <FormControl>
                                 <Input
                                     placeholder="Update Your Name Here"
-
                                     type=""
                                     {...field} />
                             </FormControl>
@@ -94,9 +92,6 @@ export default function UpdatInformationForm({ userId }: { userId: string }) {
                         </FormItem>
                     )}
                 />
-
-
-
                 <FormField
                     control={form.control}
                     name="subject"
