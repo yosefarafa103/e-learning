@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 import User from "@/models/user.model"
+import axios from "axios";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 export async function POST(req: Request, response: NextResponse) {
   const sig = req.headers.get('stripe-signature');
@@ -18,9 +19,16 @@ export async function POST(req: Request, response: NextResponse) {
 
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object;
-    await User.findByIdAndUpdate(event.data.object.metadata!.userId, {
-      $addToSet: { enrolled_courses: { $each: event.data.object.metadata!.courseId } }
-    })
+    // await User.findByIdAndUpdate(event.data.object.metadata!.userId, {
+    //   $addToSet: { enrolled_courses: { $each: event.data.object.metadata!.courseId } }
+    // })
+    try {
+      await axios.patch(`https://e-learning-eight-tau.vercel.app/api/auth/users/${event.data.object.metadata!.userId}`, {
+        enrolled_courses: [event.data.object.metadata!.courseId]
+      })
+    } catch (error) {
+      console.log("Can Not Add Course To User Enroll Courses");
+    }
     console.log('Checkout session completed:', session);
   }
 

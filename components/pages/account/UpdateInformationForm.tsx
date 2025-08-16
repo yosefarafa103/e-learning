@@ -71,7 +71,6 @@ export default function UpdatInformationForm({ userId }: { userId: string }) {
             toast.error("Failed to submit the form. Please try again.");
         }
     }
-
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 mx-auto w-full py-10">

@@ -1,5 +1,6 @@
 import { dbConnection } from "@/lib/db";
 import User from "@/models/user.model"
+import { IUser } from "@/types/user";
 import z from "zod"
 export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {
     const { id } = await params
@@ -27,19 +28,36 @@ export async function GET(_request: Request, { params }: { params: Promise<{ id:
 const updateSchema = z.object({
     name: z.string().optional(),
     role: z.string().optional(),
-    subjects: z.array(z.string()).optional()
+    subjects: z.array(z.string()).optional(),
 })
 export async function PATCH(_request: Request, { params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
-    const body = await _request.json()
+    const {
+        email,
+        imgProfile,
+        name,
+        role,
+        subjects,
+        enrolled_courses,
+    }: IUser = await _request.json()
+    const body = {
+        email, imgProfile,
+        name, role, subjects, enrolled_courses,
+    }
     try {
         await dbConnection();
         let user;
         if (updateSchema.safeParse(body).success) {
-            if (body.subjects) {
+            if (subjects) {
                 user = await User.findByIdAndUpdate(
                     id,
-                    { $addToSet: { subjects: { $each: body.subjects } } },
+                    { $addToSet: { subjects: { $each: subjects } } },
+                    { new: true }
+                );
+            } else if (enrolled_courses) {
+                user = await User.findByIdAndUpdate(
+                    id,
+                    { $addToSet: { enrolled_courses: { $each: enrolled_courses } } },
                     { new: true }
                 );
             } else {
