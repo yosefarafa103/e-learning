@@ -1,20 +1,19 @@
-import { signOutUser } from '@/helpers/signout'
-import React from 'react'
-import { Button } from '../ui/button'
+"use client";
+import { signOutUser } from "@/helpers/signout";
+import React from "react";
+import { Button } from "../ui/button";
 
 const LogoutButton = () => {
+  return (
+    <form action={signOutUser}>
+      <Button
+        type="submit"
+        className="w-full bg-red-600 hover:bg-red-700 text-white"
+      >
+        Logout
+      </Button>
+    </form>
+  );
+};
 
-
-    return (
-        <form action={signOutUser}>
-            <Button type='submit'
-                className='w-full bg-red-600 hover:bg-red-700 text-white'
-            >
-                Logout
-            </Button>
-        </form>
-
-    )
-}
-
-export default LogoutButton
+export default LogoutButton;

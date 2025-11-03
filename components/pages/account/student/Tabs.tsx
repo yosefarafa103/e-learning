@@ -8,9 +8,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { List } from "lucide-react";
-import React, { Suspense, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Loader from "@/components/atoms/Loader";
+import { io } from "socket.io-client";
 const MyCourses = dynamic(() => import("./MyCourses"));
 const Dashboard = dynamic(() => import("./Dashboard"));
 const MyMessages = dynamic(() => import("./MyMessages"));
@@ -31,7 +32,21 @@ const TabsStudent = () => {
     { id: "profile", label: "Profile", component: <Profile /> },
     { id: "settings", label: "Settings", component: <Settings /> },
   ];
-
+  const socket = io("http://localhost:5000");
+  useEffect(() => {
+    socket.on("connect", () => {
+      console.log("✅ Connected to socket server:", socket.id);
+    });
+    socket.on("conenction-success", (data) => {
+      console.log(data?.user, "connected to our server");
+    });
+    socket.on("disconnected-success", (data) => {
+      console.log(data?.user, "socket disconnected from our server");
+    });
+    return () => {
+      socket.disconnect();
+    };
+  }, []);
   return (
     <>
       <Card className="rounded-2xl border-muted border-2 py-3 bg-primary-foreground">

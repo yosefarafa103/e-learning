@@ -14,11 +14,11 @@
   "duration": {
     "title": "Duration"
   },
-  "languge": {
-    "title": "Languges"
+  "language": {
+    "title": "Languages"
   },
   "exploreCourses": "Explore Courses",
-  "perfectCourse": "Find The Prefect Course To Enhance Your Skills And Knowlage",
+  "perfectCourse": "Find The Perfect Course To Enhance Your Skills And Knowledge",
   "courses": "Courses",
   "explore": "Explore",
   "instructors": "Instructors",
@@ -40,29 +40,59 @@
   "newPassword": "New Password",
   "confirmPassword": "Confirm Password",
   "preferredLanguages": "Preferred Languages",
-  "settings": "Settings",
   "submit": "Submit",
   "changePassword": "Change Password",
   "search": "Search",
   "showMore": "Show More",
   "showLess": "Show Less",
-  "bookCourse": "Buy This Course For: ",
-  "commonQuestions": "common Questions",
-  "our Community": {
+  "bookCourse": "Buy This Course For:",
+  "commonQuestions": "Common Questions",
+  "ourCommunity": {
     "title": "Our Community",
-    "headPageTitle": "our Community",
+    "headPageTitle": "Our Community",
     "headPageDescription": "Join the community to connect with students and teachers."
   },
   "phone": "Phone",
   "subjects": "Subjects",
   "role": "Role",
-  "doesntHave": "Dosent Have",
+  "doesntHave": "Doesn't Have",
   "teacher": "Teacher",
-  "editYourInfo": "Edit Your Informations",
+  "editYourInfo": "Edit Your Information",
   "forms": {
-    "required": "Requried Field",
+    "required": "Required Field",
     "name": "Name",
     "add": "Add",
     "update": "Update"
+  },
+  "dashboard": {
+    "tabs": {
+      "courses": "My Courses",
+      "charge": "My Charge",
+      "groups": "Groups",
+      "settings": "Settings"
+    },
+    "welcome": "Welcome, {{name}}"
+  },
+  "settings": {
+    "title": "Instructor Settings",
+    "fullName": "Full Name",
+    "email": "Email",
+    "bio": "Bio",
+    "imageUrl": "Profile Image URL",
+    "imagePlaceholder": "Paste image URL",
+    "bioPlaceholder": "Write something about yourself...",
+    "saveChanges": "Save Changes",
+    "saving": "Saving...",
+    "success": "Settings updated successfully ✨",
+    "error": "Failed to update settings 😔",
+    "userNotFound": "User not found!",
+    "noChanges": "No changes detected.",
+    "loadError": "Failed to load user data."
+  },
+  "groups": {
+    "title": "Groups",
+    "addGroupButton": "Add Group",
+    "dialogTitle": "Add New Group",
+    "noGroups": "No groups available yet."
   }
 }

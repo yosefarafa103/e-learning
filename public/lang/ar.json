@@ -1,71 +1,98 @@
 {
-  "exploreCourses": "استكشف الدورات",
-  "perfectCourse": "ابحث عن الدورة المثالية لتعزيز مهاراتك ومعرفتك",
   "subject": {
-    "title": "المادة الدراسية",
-    "options": [""]
+    "title": "المادة"
   },
   "level": {
-    "title": "المستوي",
+    "title": "المستوى",
     "levels": {
-      "level1": "المستوي 1",
-      "level2": "المستوي 2",
-      "level3": "المستوي 3",
-      "level4": "المستوي 4"
+      "level1": "المستوى الأول",
+      "level2": "المستوى الثاني",
+      "level3": "المستوى الثالث",
+      "level4": "المستوى الرابع"
     }
   },
   "duration": {
-    "title": "المدة",
-    "options": [""]
+    "title": "المدة"
   },
-  "languge": {
-    "title": "اللغة",
-    "options": [""]
+  "language": {
+    "title": "اللغات"
   },
+  "exploreCourses": "استكشف الدورات",
+  "perfectCourse": "اعثر على الدورة المثالية لتطوير مهاراتك ومعرفتك",
   "courses": "الدورات",
-  "explore": "تصفح",
+  "explore": "استكشف",
   "instructors": "المدربون",
   "login": "تسجيل الدخول",
   "featuredCourses": "الدورات المميزة",
-  "allCourses": "جميع الدورات",
-  "overview": "نبذه عن الدورة",
-  "content": "المحتوي",
+  "allCourses": "كل الدورات",
+  "overview": "نظرة عامة على الدورة",
+  "content": "المحتوى",
   "instructor": "المدرب",
-  "reviews": "ملاحظات الطلاب",
-  "collectCourse": "الالتحاق بالدورة",
-  "instructorSentins": "تعرف علي افضل المدربين في مختلف المجالات",
-  "myAccount": "حسابي",
-  "logout": "تسجيل خروج",
+  "reviews": "مراجعات الطلاب",
+  "collectCourse": "احجز هذه الدورة بـ:",
+  "instructorSentins": "تعرف على المدربين في مختلف المجالات",
+  "myAccount": "الملف الشخصي",
+  "logout": "تسجيل الخروج",
   "fullName": "الاسم الكامل",
   "email": "البريد الإلكتروني",
-  "bio": "نبذة",
+  "bio": "نبذة شخصية",
   "currentPassword": "كلمة المرور الحالية",
   "newPassword": "كلمة المرور الجديدة",
   "confirmPassword": "تأكيد كلمة المرور",
   "preferredLanguages": "اللغات المفضلة",
-  "settings": "الإعدادات",
   "submit": "إرسال",
   "changePassword": "تغيير كلمة المرور",
-  "search": "ابحث",
+  "search": "بحث",
   "showMore": "عرض المزيد",
   "showLess": "عرض أقل",
-  "bookCourse": "اشتر الدورة الان!",
-  "our Community": {
+  "bookCourse": "اشتري هذه الدورة بـ:",
+  "commonQuestions": "الأسئلة الشائعة",
+  "ourCommunity": {
     "title": "مجتمعنا",
-    "headPageTitle": "المجتمع",
-    "headPageDescription": "انضم الي المجتمع للتواصل مع الطلاب والمعلمين"
+    "headPageTitle": "مجتمعنا",
+    "headPageDescription": "انضم إلى المجتمع للتواصل مع الطلاب والمعلمين."
   },
-  "commonQuestions": "المناقشات الشائعة",
-  "phone": "رقم الهاتف",
-  "subjects": "المواد الدراسية",
+  "phone": "الهاتف",
+  "subjects": "المواد",
   "role": "الدور",
   "doesntHave": "لا يمتلك",
-  "teacher": "مدرس",
-  "editYourInfo": "تعديل معلوماتك الشخصية",
+  "teacher": "المعلم",
+  "editYourInfo": "تعديل معلوماتك",
   "forms": {
-    "required": "حقل الزامي",
+    "required": "حقل مطلوب",
     "name": "الاسم",
-    "add": "اضافة",
-    "update": "تعديل"
+    "add": "إضافة",
+    "update": "تحديث"
+  },
+  "dashboard": {
+    "tabs": {
+      "courses": "دوراتي",
+      "charge": "شحن الرصيد",
+      "groups": "المجموعات",
+      "settings": "الإعدادات"
+    },
+    "welcome": "مرحباً، {{name}}"
+  },
+  "settings": {
+    "title": "إعدادات المعلم",
+    "fullName": "الاسم الكامل",
+    "email": "البريد الإلكتروني",
+    "bio": "نبذة شخصية",
+    "imageUrl": "رابط صورة الملف الشخصي",
+    "imagePlaceholder": "ألصق رابط الصورة هنا",
+    "bioPlaceholder": "اكتب شيئًا عن نفسك...",
+    "saveChanges": "حفظ التغييرات",
+    "saving": "جارٍ الحفظ...",
+    "success": "تم تحديث الإعدادات بنجاح ✨",
+    "error": "فشل تحديث الإعدادات 😔",
+    "userNotFound": "المستخدم غير موجود!",
+    "noChanges": "لم يتم اكتشاف أي تغييرات.",
+    "loadError": "فشل تحميل بيانات المستخدم."
+  },
+  "groups": {
+    "title": "المجموعات",
+    "addGroupButton": "إضافة مجموعة",
+    "dialogTitle": "إضافة مجموعة جديدة",
+    "noGroups": "لا توجد مجموعات حتى الآن."
   }
 }
