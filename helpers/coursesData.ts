@@ -10,6 +10,7 @@ class Courses implements CoursesClass {
 
   constructor() {
     this.url =
+      // @ts-ignore
       "http://localhost:3000/api/courses" ||
       "http://e-learning-eight-tau.vercel.app/api/courses";
   }

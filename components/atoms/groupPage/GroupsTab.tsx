@@ -12,7 +12,7 @@ import {
 import { useToken } from "@/lib/getCookieClient";
 import jwt from "jsonwebtoken";
 import { useTeacherGroups } from "@/hooks/useTeacherGroups";
-import AddGroupForm from "./AddGroupForm";
+import AddGroupForm from "../../pages/account/teacher/AddGroupForm";
 import Loader from "@/components/atoms/Loader";
 import GroupItem from "./GroupItem";
 import { useTranslation } from "react-i18next";

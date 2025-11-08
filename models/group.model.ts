@@ -1,5 +1,6 @@
 import { IGroup } from "@/types/groups";
 import { Schema, model, models } from "mongoose";
+import User from "./user.model";
 
 const groupSchema = new Schema<IGroup>(
   {
@@ -12,13 +13,13 @@ const groupSchema = new Schema<IGroup>(
     },
     teacher: {
       type: String,
-      ref: "User",
+      ref: User,
       required: [true, "Teacher ID is required"],
     },
     students: [
       {
         type: Schema.Types.ObjectId,
-        ref: "User", // References to student users
+        ref: User, // References to student users
       },
     ],
   },

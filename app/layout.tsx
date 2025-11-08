@@ -15,22 +15,19 @@ const cairo = Cairo({
   subsets: ["latin"],
 });
 
-
-import { CookiesProvider } from 'next-client-cookies/server';
+import { CookiesProvider } from "next-client-cookies/server";
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" >
+    <html lang="en">
       <head>
         <link rel="icon" href="/logo2.png" type="image/x-icon" />
         <title>الصفحة الرئيسية | تعلمك</title>
       </head>
-      <body
-        className={`bg-background antialiased dark:bg-black`}
-      >
+      <body className={`bg-background antialiased dark:bg-black`}>
         <Toaster />
         <ThemeProvider
           defaultTheme="system"
@@ -45,9 +42,7 @@ export default function RootLayout({
             </PageWrapper>
           </CookiesProvider>
         </ThemeProvider>
-
       </body>
-
-    </html >
+    </html>
   );
 }

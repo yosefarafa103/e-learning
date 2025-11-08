@@ -9,7 +9,7 @@ import CourseTab from "./CourseTab";
 import ChargeTab from "./ChargeTab";
 import InstructorSettings from "./Settings";
 import { MobileNavDropdown } from "./MobileNavDropDown";
-import GroupsTab from "./GroupsTab";
+import GroupsTab from "../../../atoms/groupPage/GroupsTab";
 import { useCurrentUser } from "@/hooks/useCurrentUser";
 import Loader from "@/components/atoms/Loader";
 import { useTranslation } from "react-i18next";

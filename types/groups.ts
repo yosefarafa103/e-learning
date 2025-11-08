@@ -4,8 +4,8 @@ export interface IGroup {
   _id?: string;
   name: string;
   description?: string;
-  teacher: string;
-  students: IUser[];
+  teacher: IUser;
+  students: IUser[]|null;
   createdAt?: Date;
   updatedAt?: Date;
 }
