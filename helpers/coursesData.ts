@@ -9,7 +9,7 @@ class Courses implements CoursesClass {
   private url: string;
 
   constructor() {
-    this.url = "http://e-learning-eight-tau.vercel.app/api/courses";
+    this.url = "https://e-learning-eight-tau.vercel.app/api/courses";
   }
   async handelGetCourseById(id: string) {
     try {
