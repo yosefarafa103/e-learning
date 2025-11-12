@@ -32,12 +32,10 @@ const AllSubjects = () => {
     <>
       <Heading title="جميع المواد" />
       <Separator />
+      {isLoading && <Loader />}
       <GridWrapper>
-        {isLoading ? (
-          <Loader />
-        ) : (
-          filterSubjects?.map((item) => <SubjectCard {...item} />)
-        )}
+        {filterSubjects?.length &&
+          filterSubjects?.map((item) => <SubjectCard {...item} />)}
       </GridWrapper>
     </>
   );

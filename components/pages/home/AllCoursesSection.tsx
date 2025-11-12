@@ -30,7 +30,7 @@ const AllCoursesSection = () => {
             id={el._id!}
             description={el.description}
             title={el.title}
-            img={img}
+            img={""}
           />
         ))}
       </section>

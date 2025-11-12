@@ -5,7 +5,7 @@ import { IUser } from "./user";
 export interface Course {
   id: number;
   title: string;
-  img: StaticImageData;
+  img: string;
   description?: string;
   link: string;
   overview?: string;
