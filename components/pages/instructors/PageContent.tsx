@@ -1,4 +1,3 @@
-// "use client"
 import PersonBlock from '@/components/atoms/PersonBlock'
 import WrapperBody from '@/components/WrapperBody'
 import img from "@/app/_assets/emmanuel-serratrice-black-guy-disney-03.jpg"
@@ -8,8 +7,6 @@ import {
     CarouselItem,
 } from "@/components/ui/carousel"
 import InstructorCourses from '@/components/InstructorCourses'
-import FullHeading from '@/components/molecules/FullHeading'
-import { useTranslation } from 'react-i18next'
 const PageContent = () => {
     // const { t } = useTranslation();
     return (

@@ -1,5 +1,4 @@
 import type { Course } from "@/types/courses";
-import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 
 const Course = ({ description, img, title, id }: Course) => {
@@ -14,13 +13,11 @@ const Course = ({ description, img, title, id }: Course) => {
           <h3 className="text-lg font-bold text-gray-900 dark:text-white line-clamp-2">
             {title}
           </h3>
-
           {description && (
             <p className="text-gray-500 dark:text-gray-400 text-sm line-clamp-3">
               {description}
             </p>
           )}
-
           <Link
             href={`/courses/platform/${id}`}
             target="_blank"

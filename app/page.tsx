@@ -9,18 +9,21 @@ import Categories from "@/components/pages/home/Categories";
 import AboutSection from "@/components/pages/home/AboutPlatform";
 import Footer from "@/components/pages/home/Footer";
 import StatisticsSection from "@/components/pages/home/StatisticsSection";
+import ErrorBoundary from "@/components/atoms/ErrorBoundary";
 export default function Home() {
   return (
     <Suspense fallback={<Loader />}>
-      <WrapperBody>
-        <ExploreCourses />
-        <AllCoursesSection />
-        <AllSubjects />
-        <Categories />
-        <AboutSection />
-        <StatisticsSection />
-        <Footer />
-      </WrapperBody>
+      <ErrorBoundary>
+        <WrapperBody>
+          <ExploreCourses />
+          <AllCoursesSection />
+          <AllSubjects />
+          <Categories />
+          <AboutSection />
+          <StatisticsSection />
+          <Footer />
+        </WrapperBody>
+      </ErrorBoundary>
     </Suspense>
   );
 }

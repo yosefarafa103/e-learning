@@ -11,7 +11,6 @@ const CourseModule = ({
     const { t } = useTranslation()
     const [open, setOpen] = useState(false)
     return (
-
         <section className='flex gap-5'>
             <Button variant={"ghost"} size={"lg"} className='bg-secondary/80' >
                 <BookOpen />

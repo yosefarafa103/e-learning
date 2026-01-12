@@ -94,5 +94,29 @@
     "addGroupButton": "Add Group",
     "dialogTitle": "Add New Group",
     "noGroups": "No groups available yet."
+  },
+  "about": {
+    "title": "About",
+    "platform": "Platform",
+    "description": "We are an online learning platform that aims to empower learners to develop their skills online through interactive content, high-quality courses, and outstanding instructors across various fields. We believe learning is a continuous journey, and we provide you with the tools to achieve your educational and professional goals."
+  },
+  "statistics": {
+    "title": "Platform",
+    "platform": "Statistics",
+    "students": "Registered Students ",
+    "courses": "Training Courses ",
+    "instructors": "Expert Instructors ",
+    "rating": "User Rating "
+  },
+  "footer": {
+    "importantLinks": "Important Links",
+    "privacyPolicy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "support": "Technical Support",
+    "contactUs": "Contact Us",
+    "aboutPlatform": "About the Platform",
+    "aboutDescription": "We are an online learning platform that aims to empower learners to develop their skills through interactive content and expert instructors across various fields.",
+    "rights": "All rights reserved for",
+    "platformName": "Taallamak"
   }
 }

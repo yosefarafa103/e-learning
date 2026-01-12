@@ -1,41 +1,50 @@
+"use client"
 import { Users, BookOpen, GraduationCap, Star } from "lucide-react";
 import { ReactNode } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function StatisticsSection() {
+  const { t } = useTranslation();
+
   const stats = [
     {
       icon: <Users className="w-10 h-10" />,
       value: "12,500+",
-      label: "طالب مسجل 👩‍🎓",
+      label: t("statistics.students"),
     },
     {
       icon: <BookOpen className="w-10 h-10" />,
       value: "320+",
-      label: "دورة تدريبية 🎓",
+      label: t("statistics.courses"),
     },
     {
       icon: <GraduationCap className="w-10 h-10" />,
       value: "80+",
-      label: "مدرب خبير 👨‍🏫",
+      label: t("statistics.instructors"),
     },
     {
-      icon: <Star className="w-10 h-10 text-yellow-400" />,
+      icon: <Star className="w-10 h-10" />,
       value: "4.9 / 5",
-      label: "تقييم المستخدمين ⭐",
+      label: t("statistics.rating"),
       iconColor: "text-yellow-400",
     },
   ];
+
   return (
     <section className="bg-background transition-colors duration-300 py-20 border rounded-lg mb-2">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-          إحصائيات{" "}
-          <span className="text-indigo-600 dark:text-indigo-400">المنصة</span>
+          {t("statistics.title")}{" "}
+          <span className="text-indigo-600 dark:text-indigo-400">
+            {t("statistics.platform")}
+          </span>
         </h2>
+
         <div className="w-24 h-1 bg-indigo-500 dark:bg-indigo-400 mx-auto mb-12 rounded-full" />
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {stats.map((el) => (
-            <StatCard {...el} />
+          {stats.map((el, idx) => (
+            <StatCard key={idx} {...el} />
           ))}
         </div>
       </div>
@@ -49,6 +58,7 @@ export interface StatItem {
   label: string;
   iconColor?: string;
 }
+
 export function StatCard({
   icon,
   value,

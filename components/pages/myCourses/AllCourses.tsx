@@ -1,12 +1,12 @@
-import { CoursesData } from "@/constants/courses"
-import Course from "../instructors/Course"
+import { CoursesData } from "@/constants/courses";
+import Course from "../instructors/Course";
 
 const AllCourses = () => {
   return (
     <>
-      <Course  {...CoursesData[0]} />
+      <Course {...CoursesData[0]} />
     </>
-  )
-}
+  );
+};
 
-export default AllCourses
+export default AllCourses;

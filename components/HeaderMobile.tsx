@@ -1,80 +1,56 @@
-"use client"
-import { CollapsibleContent } from '@radix-ui/react-collapsible';
-import React, { useEffect, useState } from 'react'
-import { Collapsible, CollapsibleTrigger } from './ui/collapsible';
-import { Button } from './ui/button';
-import { List } from 'lucide-react';
-import Link from 'next/link';
-import { Separator } from './ui/separator';
-import ToggleLanguges from './ToggleLanguges';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from './ui/dropdown-menu';
+"use client";
+import { CollapsibleContent } from "@radix-ui/react-collapsible";
+import React, { useEffect, useState } from "react";
+import { Collapsible, CollapsibleTrigger } from "./ui/collapsible";
+import { Button } from "./ui/button";
+import { Menu } from "lucide-react";
+import Link from "next/link";
+import { Separator } from "./ui/separator";
 
 const HeaderMobile = () => {
-    let links: { link: string, title: string }[] = [{ link: "/courses", title: "الكورسات" },
-    // { link: "/explore", title: "تصفح" },
-    { link: "/instructors", title: "المدربين" }
-    ]
-    const [isOpen, setIsOpen] = useState(false);
-    useEffect(() => {
-        return () => {
-            setIsOpen(false)
-        }
-    }, [])
-    return (
-        <>
-            <ToggleLanguges />
-            {/* <DropdownMenu>
-                <DropdownMenuTrigger>
-                    <Button asChild size={"icon"} variant={"ghost"}>
-                        <List className="sm:hidden cursor-pointer " />
-                    </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className='mt-5 w-full'>
-                    <>
-                        {links.map((l) => (
-                            <>
-                                <Button key={l.link} onClick={() => setIsOpen(!isOpen)} asChild className="w-full block" variant={"ghost"}>
-                                    <Link href={l.link} key={l.link} >
-                                        {
-                                            l.title
-                                        }
-                                    </Link>
-                                </Button>
-                                <Separator />
-                            </>
-                        ))}
-                    </>
-                </DropdownMenuContent>
-            </DropdownMenu> */}
-            <Collapsible className="sm:hidden">
-                <CollapsibleTrigger onClick={() => setIsOpen(true)}>
-                    <Button asChild size={"icon"} variant={"ghost"}>
-                        <List className="sm:hidden cursor-pointer " />
-                    </Button>
-                </CollapsibleTrigger>
-                <CollapsibleContent className="fixed top-[100px] right-0 w-full bg-foreground text-background z-10 ">
-                    {isOpen &&
-                        <>
-                            {links.map((l) => (
-                                <>
-                                    <Button key={l.link} onClick={() => setIsOpen(!isOpen)} asChild className="w-full block" variant={"ghost"}>
-                                        <Link href={l.link} key={l.link} >
-                                            {
-                                                l.title
-                                            }
-                                        </Link>
-                                    </Button>
-                                    <Separator />
-                                </>
+  let links: { link: string; title: string }[] = [
+    { link: "/courses", title: "الكورسات" },
+    { link: "/instructors", title: "المدربين" },
+  ];
+  const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    return () => {
+      setIsOpen(false);
+    };
+  }, []);
+  return (
+    <>
+      <Collapsible className="sm:hidden">
+        <CollapsibleTrigger onClick={() => setIsOpen(true)}>
+          <Button asChild size={"icon"} variant={"ghost"}>
+            <Menu className="sm:hidden cursor-pointer " />
+          </Button>
+        </CollapsibleTrigger>
+        <CollapsibleContent className="fixed top-[100px] right-0 w-full bg-background text-background z-10 ">
+          {isOpen && (
+            <>
+              {links.map((l) => (
+                <>
+                  <Button
+                    key={l.link}
+                    onClick={() => setIsOpen(!isOpen)}
+                    asChild
+                    className="w-full block"
+                    variant={"ghost"}
+                  >
+                    <Link href={l.link} key={l.link}>
+                      {l.title}
+                    </Link>
+                  </Button>
+                  <Separator />
+                </>
+              ))}
+            </>
+          )}
+        </CollapsibleContent>
+      </Collapsible>
+    </>
+  );
+};
 
-                            ))}
-                        </>
-
-                    }
-                </CollapsibleContent>
-            </Collapsible>
-        </>
-    )
-}
-
-export default HeaderMobile
+export default HeaderMobile;

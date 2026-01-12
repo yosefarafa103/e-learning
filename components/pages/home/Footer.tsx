@@ -1,15 +1,20 @@
+"use client";
+
 import { Mail, Phone, Facebook, Twitter, Instagram } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const { t, i18n } = useTranslation();
+
   return (
     <footer
-      dir="rtl"
+      dir={i18n.language === "ar" ? "rtl" : "ltr"}
       className="bg-background border rounded-lg text-gray-200 pt-10 pb-5"
     >
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
-        <>
+        <div>
           <h3 className="text-xl font-semibold mb-4 text-primary">
-            روابط مهمة
+            {t("footer.importantLinks")}
           </h3>
           <ul className="space-y-2">
             <li>
@@ -17,7 +22,7 @@ export default function Footer() {
                 href="#"
                 className="hover:text-indigo-400 transition text-primary"
               >
-                سياسة الخصوصية
+                {t("footer.privacyPolicy")}
               </a>
             </li>
             <li>
@@ -25,7 +30,7 @@ export default function Footer() {
                 href="#"
                 className="hover:text-indigo-400 transition text-primary"
               >
-                الشروط والأحكام
+                {t("footer.terms")}
               </a>
             </li>
             <li>
@@ -33,17 +38,17 @@ export default function Footer() {
                 href="#"
                 className="hover:text-indigo-400 transition text-primary"
               >
-                الدعم الفني
+                {t("footer.support")}
               </a>
             </li>
           </ul>
-        </>
+        </div>
 
-        <>
+        <div>
           <h3 className="text-xl font-semibold mb-4 text-primary">
-            تواصل معنا
+            {t("footer.contactUs")}
           </h3>
-          <ul className="space-y-3 ">
+          <ul className="space-y-3">
             <li className="flex items-center gap-3 text-primary">
               <Mail className="w-5 h-5 text-indigo-400" />
               <a
@@ -60,31 +65,40 @@ export default function Footer() {
           </ul>
 
           <div className="flex gap-4 mt-4">
-            <a href="#" className="hover:text-indigo-400 transition text-primary">
+            <a
+              href="#"
+              className="hover:text-indigo-400 transition text-primary"
+            >
               <Facebook />
             </a>
-            <a href="#" className="hover:text-indigo-400 transition text-primary">
+            <a
+              href="#"
+              className="hover:text-indigo-400 transition text-primary"
+            >
               <Twitter />
             </a>
-            <a href="#" className="hover:text-indigo-400 transition text-primary">
+            <a
+              href="#"
+              className="hover:text-indigo-400 transition text-primary"
+            >
               <Instagram />
             </a>
           </div>
-        </>
+        </div>
 
-        <>
-          <h3 className="text-xl font-semibold mb-4 text-white">عن المنصة</h3>
+        <div>
+          <h3 className="text-xl font-semibold mb-4 text-primary">
+            {t("footer.aboutPlatform")}
+          </h3>
           <p className="text-primary leading-relaxed">
-            نحن منصة تعليمية إلكترونية تهدف إلى تمكين المتعلمين من تطوير
-            مهاراتهم عبر الإنترنت من خلال محتوى تفاعلي وأساتذة متميزين في مختلف
-            المجالات.
+            {t("footer.aboutDescription")}
           </p>
-        </>
+        </div>
       </div>
 
       <div className="border-t border-primary mt-10 pt-6 text-center text-primary text-sm">
-        © {new Date().getFullYear()} جميع الحقوق محفوظة لمنصة{" "}
-        <span className="text-indigo-400">تعلمك</span>
+        © {new Date().getFullYear()} {t("footer.rights")}{" "}
+        <span className="text-indigo-400">{t("footer.platformName")}</span>
       </div>
     </footer>
   );

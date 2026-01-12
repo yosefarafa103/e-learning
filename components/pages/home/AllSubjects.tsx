@@ -11,7 +11,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const AllSubjects = () => {
-  const { data, isLoading } = useQuery<ISubject[]>({
+  const { data, isLoading, isError, failureReason } = useQuery<ISubject[]>({
     queryFn: getSubjects,
     queryKey: ["subjects"],
     staleTime: 60_000,
@@ -26,8 +26,6 @@ const AllSubjects = () => {
       )
     );
   }, [searchParams.get("subject"), data]);
-  console.log(filterSubjects);
-
   return (
     <>
       <Heading title="جميع المواد" />

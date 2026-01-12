@@ -8,6 +8,7 @@ import AuthAreaHeader from "./atoms/AuthAreaHeader";
 import React from "react";
 import ToggleTheme from "./ToggleTheme";
 import HeaderLinks from "./atoms/HeaderLinks";
+import ToggleLanguges from "./ToggleLanguges";
 
 const Header = () => {
   return (
@@ -29,12 +30,13 @@ const Header = () => {
             </Link>
           </div>
           <HeaderLinks />
-          <section className="flex items-center gap-2 mx-2">
-            <HeaderMobile />
-          </section>
         </section>
+        <ToggleLanguges />
         <AuthAreaHeader />
         <ToggleTheme />
+        <section className="flex items-center gap-2 mx-2">
+          <HeaderMobile />
+        </section>
       </header>
     </>
   );
