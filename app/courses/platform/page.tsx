@@ -5,7 +5,6 @@ import Courses from "@/helpers/coursesData";
 import { ICourse } from "@/types/courses";
 import { IUser } from "@/types/user";
 import type { Metadata } from "next";
-
 import { BadgeDollarSign, DollarSign, GraduationCap, School, Star } from "lucide-react";
 import Link from "next/link";
 export const metadata: Metadata = {
@@ -38,7 +37,6 @@ const page = async () => {
                             </CardFooter>
                         </Card>
                     </Link>
-
                 ))}
             </section>
         </WrapperBody>

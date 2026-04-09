@@ -12,17 +12,17 @@ const page = async ({
   studentDashboard: React.ReactNode;
 }) => {
   const user = await getSignInUser();
-  if (!user) return redirect("/login");
+  // if (!user) return redirect("/login");
   return (
     <>
       {/* <ProfileInfo /> */}
-      <>
-        {user.role === "teacher" ? (
+      <section className="dark:bg-blue-900/10 bg-blue-50">
+        {user?.role === "teacher" ? (
           <>{teacherDashboard} </>
         ) : (
           <>{studentDashboard}</>
         )}
-      </>
+      </section>
       <section className="p-3">{children}</section>
     </>
   );

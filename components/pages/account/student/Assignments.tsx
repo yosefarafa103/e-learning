@@ -1,9 +1,10 @@
 "use client";
-
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
+import { useTranslation } from "react-i18next";
+import { toCamelCase } from "@/helpers/camelCase";
 
 export default function Assignments() {
   const [assignments] = useState([
@@ -57,63 +58,62 @@ export default function Assignments() {
         return "text-gray-600 bg-gray-100";
     }
   };
+  const { t } = useTranslation();
 
   return (
     <div className="w-full  mx-auto">
-      <Card className="shadow-md rounded-2xl overflow-hidden py-0 bg-transparent border-transparent">
-        <CardContent className="p-6">
-          <h2 className="text-2xl font-semibold mb-6 text-primary">
-            Assignments & Quizzes
-          </h2>
-
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {assignments.map((item) => (
-              <div
-                key={item.id}
-                className="p-5 border rounded-2xl shadow-sm bg-white hover:shadow-md transition"
-              >
-                <div className="flex justify-between items-start mb-3">
-                  <div>
-                    <h3 className="font-semibold text-lg dark:text-black text-primary">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-gray-500">{item.course}</p>
-                  </div>
-                  <span
-                    className={`text-xs font-medium px-2 py-1 rounded-full ${getStatusColor(
-                      item.status as "Completed" | "In Progress" | "Pending"
-                    )}`}
-                  >
-                    {item.status}
-                  </span>
+      <h2 className="text-2xl font-semibold mb-6 text-primary">
+        {t("dashboard.tabs.assignments")}
+      </h2>
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {assignments.map((item) => (
+          <Card
+            key={item.id}
+            className="p-5 border rounded-2xl shadow-sm bg-background text-foreground hover:shadow-md transition"
+          >
+            <CardContent>
+              <div className="flex justify-between items-start mb-3">
+                <div>
+                  <h3 className="font-semibold text-lg text-primary">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-gray-500">{item.course}</p>
                 </div>
-
-                <div className="text-sm text-gray-600 mb-3">
-                  <p>
-                    Type: <span className="font-medium">{item.type}</span>
-                  </p>
-                  <p>
-                    Due: <span className="font-medium">{item.dueDate}</span>
-                  </p>
-                </div>
-
-                <Progress value={item.progress} className="h-2 mb-4" />
-
-                <Button
-                  className="w-full"
-                  variant={
-                    item.status === "Completed" ? "secondary" : "default"
-                  }
+                <span
+                  className={`text-xs font-medium px-2 py-1 whitespace-nowrap rounded-full ${getStatusColor(
+                    item.status as "Completed" | "In Progress" | "Pending"
+                  )}`}
                 >
-                  {item.status === "Completed"
-                    ? "View Submission"
-                    : "Start Now"}
-                </Button>
+                  {t("dashboard.assignments_status." + toCamelCase(item.status))}
+                </span>
               </div>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
+
+              <div className="text-sm text-gray-600 mb-3">
+                <p>
+                  Type: <span className="font-medium">{item.type}</span>
+                </p>
+                <p>
+                  Due: <span className="font-medium">{item.dueDate}</span>
+                </p>
+              </div>
+
+              <Progress value={item.progress} className="h-2 mb-4" />
+
+              <Button
+                className="w-full"
+                variant={
+                  item.status === "Completed" ? "secondary" : "default"
+                }
+              >
+                {item.status === "Completed"
+                  ? "View Submission"
+                  : "Start Now"}
+              </Button>
+            </CardContent>
+
+          </Card>
+        ))}
+      </div>
     </div>
   );
 }

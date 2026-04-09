@@ -81,7 +81,7 @@ export default function AddNewCourseDialog() {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="blue">
+        <Button className="text-white" variant="blue">
           Create New Course <Plus className="ml-2" />
         </Button>
       </DialogTrigger>

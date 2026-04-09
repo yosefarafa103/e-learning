@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { ForwardRefExoticComponent, ReactElement, RefAttributes, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { BookOpen, ClipboardList, TrendingUp, User } from "lucide-react";
+import { BookOpen, ClipboardList, LucideProps, TrendingUp, User } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { toCamelCase } from "@/helpers/camelCase";
 
 export default function Dashboard() {
   const [assignments] = useState([
@@ -21,64 +23,60 @@ export default function Dashboard() {
       progress: 100,
     },
   ]);
+  const { t } = useTranslation();
 
   const [courses] = useState([
     { id: 1, name: "Computer Science 101", instructor: "Dr. Ahmed Ali" },
     { id: 2, name: "Frontend Engineering", instructor: "Eng. Salma Hassan" },
   ]);
-
+  const dashboardCards: CardItemProps[] = [
+    {
+      title: "Active Courses",
+      icon: <BookOpen className="text-blue-600 w-8 h-8" />,
+      count: 4
+    },
+    {
+      title: "Average Grade",
+      icon: <ClipboardList className="text-yellow-500 w-8 h-8" />,
+      count: 2
+    },
+    {
+      title: "Assignments Due",
+      icon: <TrendingUp className="text-green-500 w-8 h-8" />,
+      count: "87%".split("").map(el => /\d/.test(el) ? Number(el).toLocaleString("ar-EG") : el).join(""),
+    },
+    {
+      title: "Profile",
+      icon: <User className="text-purple-600 w-8 h-8" />,
+      count: t("dashboard.cardsContent.complete")
+    }
+  ]
   return (
     <div className="space-y-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <Card className="rounded-2xl shadow-sm border">
-          <CardContent className="p-5 flex items-center justify-between">
-            <div>
-              <p className="text-gray-500 text-sm">Active Courses</p>
-              <h3 className="text-2xl font-semibold">4</h3>
-            </div>
-            <BookOpen className="text-blue-600 w-8 h-8" />
-          </CardContent>
-        </Card>
-
-        <Card className="rounded-2xl shadow-sm border">
-          <CardContent className="p-5 flex items-center justify-between">
-            <div>
-              <p className="text-gray-500 text-sm">Assignments Due</p>
-              <h3 className="text-2xl font-semibold">2</h3>
-            </div>
-            <ClipboardList className="text-yellow-500 w-8 h-8" />
-          </CardContent>
-        </Card>
-
-        <Card className="rounded-2xl shadow-sm border">
-          <CardContent className="p-5 flex items-center justify-between">
-            <div>
-              <p className="text-gray-500 text-sm">Average Grade</p>
-              <h3 className="text-2xl font-semibold">87%</h3>
-            </div>
-            <TrendingUp className="text-green-500 w-8 h-8" />
-          </CardContent>
-        </Card>
-        <Card className="rounded-2xl shadow-sm border">
-          <CardContent className="p-5 flex items-center justify-between">
-            <div>
-              <p className="text-gray-500 text-sm">Profile</p>
-              <h3 className="text-2xl font-semibold">Complete</h3>
-            </div>
-            <User className="text-purple-600 w-8 h-8" />
-          </CardContent>
-        </Card>
+        {
+          dashboardCards.map(({ count,
+            icon,
+            title
+          }) => (
+            <Dashboard.CardItem
+              count={typeof parseInt(count.toString()) === "number" ? count.toLocaleString("ar-EG") : count}
+              icon={icon}
+              title={t(`dashboard.cardsContent.${toCamelCase(title)}`)}
+            />
+          ))
+        }
       </div>
       <section>
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-xl font-semibold text-primary">
-            Upcoming Assignments
+            {t('dashboard.upcomming_assignments')}
           </h2>
           <Button variant="outline" size="sm">
-            View All
+            {t('showMore')}
           </Button>
         </div>
-        <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-4 grid-cols-1">
+        <div className="grid gap-4 sm:grid-cols-3 grid-cols-1">
           {assignments.map((a) => (
             <Card key={a.id} className="shadow-sm border rounded-2xl py-0">
               <CardContent className="p-5">
@@ -88,13 +86,12 @@ export default function Dashboard() {
                     <p className="text-sm text-gray-500">Due: {a.due}</p>
                   </div>
                   <span
-                    className={`text-xs font-medium px-2 py-1 rounded-full ${
-                      a.progress === 100
-                        ? "bg-green-100 text-green-600"
-                        : "bg-yellow-100 text-yellow-600"
-                    }`}
+                    className={`text-xs whitespace-nowrap font-medium px-2 py-1 rounded-full ${a.progress === 100
+                      ? "bg-green-100 text-green-600"
+                      : "bg-yellow-100 text-yellow-600"
+                      }`}
                   >
-                    {a.progress === 100 ? "Completed" : "In Progress"}
+                    {a.progress === 100 ? t("dashboard.assignments_status." + toCamelCase("Completed")) : t("dashboard.assignments_status." + toCamelCase("In Progress"))}
                   </span>
                 </div>
                 <Progress value={a.progress} className="h-2 mb-3" />
@@ -112,9 +109,11 @@ export default function Dashboard() {
 
       <section>
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-semibold text-primary">My Courses</h2>
+          <h2 className="text-xl font-semibold text-primary">
+            {t("dashboard.tabs.my_courses")}
+          </h2>
           <Button variant="outline" size="sm">
-            Browse Courses
+            {t("dashboard.browseCourses")}
           </Button>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -141,3 +140,21 @@ export default function Dashboard() {
     </div>
   );
 }
+interface CardItemProps {
+  icon: ReactElement<LucideProps>
+  count: number | string;
+  title: string;
+
+}
+Dashboard.CardItem = ({ icon: Icon, count, title }: CardItemProps) => (
+  <Card className="rounded-2xl shadow-sm border-2 bg-blue-900/5 border-blue-900/50">
+    <CardContent className="p-5 flex items-center justify-between">
+      <div>
+        <p className="text-gray-500"> {title} </p>
+        <h3 className="text-xl font-semibold">{count} </h3>
+      </div>
+      {Icon}
+    </CardContent>
+  </Card>
+
+)

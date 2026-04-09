@@ -1,10 +1,7 @@
 "use client";
-
-import React from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import ToggleLanguges from "../ToggleLanguges";
 const HeaderLinks = () => {
   const { t } = useTranslation();
   let links: { link: string; title: string }[] = [

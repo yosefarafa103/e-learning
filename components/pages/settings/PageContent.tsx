@@ -23,7 +23,6 @@ const PageContent = () => {
             value: "en",
             label: "English",
         },
-
     ]
     return (
         <>

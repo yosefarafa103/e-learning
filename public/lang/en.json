@@ -15,8 +15,12 @@
     "title": "Duration"
   },
   "language": {
-    "title": "Languages"
+    "title": "Languages",
+    "sp": "Spain",
+    "en": "English",
+    "ar": "Arabic"
   },
+  "browseCategory": "Browse by Category",
   "exploreCourses": "Explore Courses",
   "perfectCourse": "Find The Perfect Course To Enhance Your Skills And Knowledge",
   "courses": "Courses",
@@ -53,7 +57,15 @@
     "headPageDescription": "Join the community to connect with students and teachers."
   },
   "phone": "Phone",
-  "subjects": "Subjects",
+  "subjects": {
+    "title": "Subjects",
+    "arts": "Arts",
+    "science": "Science",
+    "literature": "Literature",
+    "technology": "Technology",
+    "mathematics": "Mathematics"
+  },
+
   "role": "Role",
   "doesntHave": "Doesn't Have",
   "teacher": "Teacher",
@@ -67,8 +79,13 @@
   "dashboard": {
     "tabs": {
       "courses": "My Courses",
+      "dashboard": "Dashboard",
+      "my_courses": "My Courses",
+      "assignments": "Assignments",
+      "messages": "Messages",
       "charge": "My Charge",
       "groups": "Groups",
+      "profile": "Profile",
       "settings": "Settings"
     },
     "welcome": "Welcome, {{name}}"

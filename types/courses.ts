@@ -3,7 +3,7 @@ import { ObjectId, Types } from 'mongoose';
 import { IUser } from "./user";
 
 export interface Course {
-  id: number;
+  id: number | string;
   title: string;
   img: string;
   description?: string;
@@ -45,3 +45,6 @@ export interface IPost {
   createdAt?: Date;
   updatedAt?: Date;
 }
+
+
+export interface CoursesResponse { courses: ICourse[] }

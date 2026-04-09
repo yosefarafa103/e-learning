@@ -1,10 +1,10 @@
 import { ICourse } from "@/types/courses";
 import axios from "axios";
+type CourseData = { status: string; courses: ICourse[] }
 interface CoursesClass {
-  getCoursesData: () => Promise<{ status: string; courses: ICourse[] }>;
+  getCoursesData: () => Promise<CourseData>;
   handelGetCourseById: (id: string) => Promise<ICourse>;
 }
-
 class Courses implements CoursesClass {
   private url: string;
 
@@ -17,10 +17,9 @@ class Courses implements CoursesClass {
       return course.data;
     } catch (err: any) {
       console.error(err);
-      // throw new Error('Failed to fetch course')
     }
   }
-  async getCoursesData(): Promise<{ status: string; courses: ICourse[] }> {
+  async getCoursesData(): Promise<CourseData> {
     try {
       const response = await axios.get(this.url);
       return response.data;

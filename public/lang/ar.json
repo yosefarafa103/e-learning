@@ -15,7 +15,10 @@
     "title": "المدة"
   },
   "language": {
-    "title": "اللغات"
+    "title": "اللغات",
+    "sp": "الاسبانية",
+    "en": "الانجليزية",
+    "ar": "العربية"
   },
   "exploreCourses": "استكشف الدورات",
   "perfectCourse": "اعثر على الدورة المثالية لتعزيز مهاراتك ومعرفتك",
@@ -47,13 +50,21 @@
   "showLess": "عرض أقل",
   "bookCourse": "اشترِ هذه الدورة مقابل:",
   "commonQuestions": "الأسئلة الشائعة",
+
   "ourCommunity": {
     "title": "مجتمعنا",
     "headPageTitle": "مجتمعنا",
     "headPageDescription": "انضم إلى المجتمع للتواصل مع الطلاب والمعلمين."
   },
   "phone": "رقم الهاتف",
-  "subjects": "المواد",
+  "subjects": {
+    "title": "المواد",
+    "arts": "فنون",
+    "science": "علوم",
+    "literature": "حصص تدريبية",
+    "technology": "تكنولوجيا",
+    "mathematics": "رياضيات"
+  },
   "role": "الدور",
   "doesntHave": "لا يوجد",
   "teacher": "مدرس",
@@ -66,12 +77,31 @@
   },
   "dashboard": {
     "tabs": {
+      "dashboard": "لوحة التحكم",
+      "my_courses": "دوراتي",
+      "assignments": "الواجبات",
+      "messages": "الرسائل",
+      "profile": "حسابي",
       "courses": "دوراتي",
       "charge": "رصيدي",
       "groups": "المجموعات",
       "settings": "الإعدادات"
     },
-    "welcome": "مرحباً، {{name}}"
+    "welcome": "مرحباً، {{name}}",
+    "browseCourses": "تصفح الدورات",
+    "upcomming_assignments": "الواجبات القادمة",
+    "cardsContent": {
+      "activeCourses": "الدورات الحالية",
+      "averageGrade": "المعدل",
+      "assignmentsDue": "معدل الواجبات",
+      "profile": "الملف الشخصي",
+      "complete": "مكتمل"
+    },
+    "assignments_status": {
+      "pending": "معلق",
+      "completed": "منتهي",
+      "inProgress": "تحت الانجاز"
+    }
   },
   "settings": {
     "title": "إعدادات المدرب",
@@ -89,6 +119,8 @@
     "noChanges": "لم يتم اكتشاف أي تغييرات.",
     "loadError": "فشل في تحميل بيانات المستخدم."
   },
+  "browseCategory": "تصفح الاقسام",
+
   "groups": {
     "title": "المجموعات",
     "addGroupButton": "إضافة مجموعة",

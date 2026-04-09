@@ -17,7 +17,7 @@ const ToggleTheme = () => {
           {theme === "dark" ? <SunMedium /> : <SunMoon />}
         </Button>
       </DropdownMenuTrigger >
-      <DropdownMenuContent className="mt-5" align="end">
+      <DropdownMenuContent className="mt-5 relative z-[999999999] " align="end">
         <DropdownMenuItem
           className="w-fit"
           asChild

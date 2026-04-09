@@ -7,8 +7,10 @@ import { Separator } from "@/components/ui/separator";
 import getSubjects from "@/helpers/getSubjects";
 import { ISubject } from "@/models/subjects.model";
 import { useQuery } from "@tanstack/react-query";
+import { t } from "i18next";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const AllSubjects = () => {
   const { data, isLoading, isError, failureReason } = useQuery<ISubject[]>({
@@ -25,10 +27,10 @@ const AllSubjects = () => {
         el.title.match(new RegExp(`${searchParams.get("subject") || ""}`))
       )
     );
-  }, [searchParams.get("subject"), data]);
+  }, [searchParams.get("subject.title"), data]);
   return (
     <>
-      <Heading title="جميع المواد" />
+      <Heading title={t("subjects.title")} />
       <Separator />
       {isLoading && <Loader />}
       <GridWrapper>

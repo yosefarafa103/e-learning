@@ -6,7 +6,7 @@ import { CommentThreadListResponse, YouTubeChannelListResponse, YouTubePlaylistI
 import axios, { AxiosResponse } from 'axios'
 import { cookies } from 'next/headers';
 
-type Props ={ params: Promise<{ courseId: string }> }
+type Props = { params: Promise<{ courseId: string }> }
 const page = async ({ params }: Props) => {
     const { courseId } = await params;
     const playList: YouTubePlaylistItemsResponse = await (await axios.get(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${courseId}&maxResults=200&key=${process.env.YT_API_KEY}`)).data

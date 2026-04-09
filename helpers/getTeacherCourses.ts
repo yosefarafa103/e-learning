@@ -1,4 +1,3 @@
-import { IUser } from "@/types/user";
 import axios, { Axios, AxiosResponse } from "axios";
 import { ICourse } from "@/types/courses";
 import { getSignInUser } from "./getSignInUser";

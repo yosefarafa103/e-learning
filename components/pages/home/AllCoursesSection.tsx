@@ -26,8 +26,8 @@ const AllCoursesSection = () => {
       <section className="my-5 grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-2">
         {data?.courses?.map((el) => (
           <Course
-            // @ts-ignore
-            id={el._id!}
+            link=""
+            id={parseInt(el._id!)}
             description={el.description}
             title={el.title}
             img={""}

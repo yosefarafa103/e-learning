@@ -2,8 +2,6 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 export async function signOutUser() {
-  console.log("aaa");
-
   try {
     // await axios.post(
     //   process.env.NODE_ENV === "development"

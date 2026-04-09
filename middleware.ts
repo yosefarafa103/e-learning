@@ -17,12 +17,12 @@ export function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  if (protectedRoutes.some((route) => pathname.startsWith(route))) {
-    if (!token) {
-      const loginUrl = new URL("/login", req.url);
-      return NextResponse.redirect(loginUrl);
-    }
-  }
+  // if (protectedRoutes.some((route) => pathname.startsWith(route))) {
+  //   if (!token) {
+  //     const loginUrl = new URL("/login", req.url);
+  //     return NextResponse.redirect(loginUrl);
+  //   }
+  // }
 
   return NextResponse.next();
 }

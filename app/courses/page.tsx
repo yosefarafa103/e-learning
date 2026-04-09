@@ -1,4 +1,3 @@
-import { PageProps } from "@/.next/types/app/courses/page";
 import Course from "@/components/pages/instructors/Course";
 import WrapperBody from "@/components/WrapperBody";
 import { YouTubeSearchResponse } from "@/types/videos";
@@ -6,7 +5,7 @@ import axios, { AxiosResponse } from "axios";
 interface MyServerComponentProps {
   subject: { [key: string]: string | string[] | undefined };
 }
-const page = async (props: PageProps) => {
+const page = async (props: PageProps<"/courses">) => {
   const searchParam = (await props.searchParams).subject || "nestjs";
 
   const handelFetchProgramming = async () => {

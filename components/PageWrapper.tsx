@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import "@/lib/i18n"
 import i18n from "@/lib/i18n";
 import { SessionProvider } from "next-auth/react"
-import {  SidebarProvider,  } from "./ui/sidebar";
+import { SidebarProvider, } from "./ui/sidebar";
 import { useCookies } from 'next-client-cookies';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 const PageWrapper = ({
@@ -26,7 +26,7 @@ const PageWrapper = ({
             <QueryClientProvider client={queryClient}>
                 <SessionProvider>
                     <SidebarProvider defaultOpen={defaultOpen} className="w-full">
-                        <section className="pt-[80px]">
+                        <section className="pt-[80px] px-5 sm:px-[5%] ">
                             {children}
                         </section>
                     </SidebarProvider>

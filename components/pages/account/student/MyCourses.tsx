@@ -4,8 +4,11 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
+import { useTranslation } from "react-i18next";
 
 export default function MyCourses() {
+  const { t } = useTranslation();
+
   const [courses] = useState([
     {
       id: 1,
@@ -43,15 +46,13 @@ export default function MyCourses() {
 
   return (
     <>
-      <h2 className="text-2xl font-semibold mb-6">My Courses</h2>
-
+      <h2 className="text-2xl font-semibold mb-6"> {t("dashboard.tabs.courses")} </h2>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {courses.map((course) => (
           <Card
             key={course.id}
             className="overflow-hidden rounded-2xl shadow-sm border hover:shadow-lg transition"
           >
-            {/* صورة الكورس */}
             <div className="h-36 overflow-hidden">
               <img
                 src={course.image}
@@ -68,7 +69,6 @@ export default function MyCourses() {
                 Instructor: {course.instructor}
               </p>
 
-              {/* شريط التقدم */}
               <div className="mb-3">
                 <Progress value={course.progress} className="h-2" />
                 <p className="text-xs text-gray-500 mt-1">
@@ -76,7 +76,6 @@ export default function MyCourses() {
                 </p>
               </div>
 
-              {/* زر */}
               <Button
                 className="w-full"
                 variant={course.progress === 100 ? "secondary" : "default"}

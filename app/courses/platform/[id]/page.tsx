@@ -8,7 +8,6 @@ import React from 'react'
 import Courses from "@/helpers/coursesData"
 import formatNumberEU from '@/utils/formatNumber';
 import RatingItem from '@/components/atoms/RatingItem';
-
 type Props = { params: Promise<{ id: string }> }
 const courseService = new Courses()
 

@@ -12,6 +12,7 @@ import axios from "axios";
 import Loader from "@/components/atoms/Loader";
 import { useCurrentUser } from "@/hooks/useCurrentUser";
 import { useTranslation } from "react-i18next";
+import { TabItem } from "@/components/atoms/TabItem";
 
 export default function InstructorSettings() {
   const { t } = useTranslation();
@@ -84,16 +85,10 @@ export default function InstructorSettings() {
     );
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
-      className="max-w-3xl mx-auto bg-background rounded-2xl shadow-sm border p-6 mt-8"
-    >
+    <TabItem key="settings">
       <h2 className="text-2xl font-semibold text-primary mb-6">
         {t("settings.title")}
       </h2>
-
       <form onSubmit={handleSubmit} className="space-y-5">
         <div className="flex items-center gap-4">
           <img
@@ -117,7 +112,6 @@ export default function InstructorSettings() {
             />
           </div>
         </div>
-
         <div>
           <Label htmlFor="name">{t("settings.fullName")}</Label>
           <Input
@@ -167,6 +161,7 @@ export default function InstructorSettings() {
           </Button>
         </div>
       </form>
-    </motion.div>
+    </TabItem>
+
   );
 }

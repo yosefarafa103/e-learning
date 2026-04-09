@@ -19,7 +19,7 @@ const ToggleLanguges = () => {
       <DropdownMenuTrigger className="mx-2">
         <Languages className={"text-sm"} />
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="flex flex-col gap-2 mt-8">
+      <DropdownMenuContent className="flex flex-col gap-2 mt-8 relative z-[9999999] ">
         <Button
           className="w-full"
           size={"icon"}

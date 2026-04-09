@@ -10,18 +10,17 @@ import {
 } from "../ui/dropdown-menu";
 import { getSignInUser } from "@/helpers/getSignInUser";
 import LogoutButton from "./LogoutButton";
+import LoginButton from "./LoginButton";
 const AuthAreaHeader = async () => {
   const user = await getSignInUser();
   return (
     <>
       {!user ? (
-        <Button variant={"secondary"}>
-          <Link href="/login">Login</Link>
-        </Button>
+        <LoginButton />
       ) : (
         <DropdownMenu>
           <DropdownMenuTrigger>
-            <Avatar className="min-w-12 min-h-12 " title={user?.name}>
+            <Avatar className="min-w-12 min-h-12" title={user?.name}>
               <AvatarImage src={img.src!} />
               <AvatarFallback> {user?.name} </AvatarFallback>
             </Avatar>

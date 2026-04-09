@@ -7,13 +7,14 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { DropdownMenu } from "@radix-ui/react-dropdown-menu";
 import { ChevronDown } from "lucide-react";
-import { useTranslation } from "react-i18next";
 import FullHeading from "@/components/molecules/FullHeading";
 import { useRouter, useSearchParams } from "next/navigation";
 import ErrorBoundary from "@/components/atoms/ErrorBoundary";
+import { useTranslation } from "react-i18next";
+import Section from "@/components/molecules/Section";
 type DropDownItemData = { title: string; content: string[] };
 const ExploreCourses = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
   const router = useRouter();
   const sParams = useSearchParams();
   const updateSingleParam = (key: string, val: string) => {
@@ -42,7 +43,7 @@ const ExploreCourses = () => {
       content: ["10h", "15h", "20h"],
     },
     {
-      title: "Languge",
+      title: "Language",
       content: ["Arabic", "English", "Spain"],
     },
   ] satisfies DropDownItemData[];
@@ -56,10 +57,11 @@ const ExploreCourses = () => {
           placeholder="Search For All Courses"
         />
         <section className="flex items-center gap-2">
-          {dropDownsData.map((el) => (
+          {dropDownsData.map((el, idx) => (
             <DropdownMenu>
-              <DropdownMenuTrigger className="px-3 py-2 rounded-lg bg-background flex items-center gap-2">
+              <DropdownMenuTrigger className="px-3 py-2 rounded-lg bg-background flex items-center gap-0.5">
                 {t(`${el.title.toLowerCase()}.title`)} <ChevronDown />
+
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
                 {el.content.map((e, i) => (
@@ -73,7 +75,7 @@ const ExploreCourses = () => {
                       console.log((item.target as HTMLElement).textContent);
                     }}
                   >
-                    {el.content[i]}
+                    {idx === 3 ? t("language." + el.content[i].slice(0, 2).toLowerCase()) : el.content[i]}
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>

@@ -7,14 +7,15 @@ import Link from "next/link";
 import { useTranslation } from "react-i18next";
 type Course = Partial<CourseType>
 const Course = ({
-    title, topic,
+    title,
+    topic,
     id,
     description,
     img
 }: Course) => {
     const { t
     } = useTranslation();
-    
+
     return (
         <section className="flex sm:justify-between max-sm:flex-col-reverse mt-5">
             <div className="column sm:w-fit mt-3">
