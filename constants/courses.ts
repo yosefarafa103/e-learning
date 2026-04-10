@@ -13,7 +13,7 @@ export const CoursesData: Course[] = [
 You'll start by learning what React is and why it's used by top companies like Facebook, Instagram, and Netflix. The course covers essential topics such as components, props, state, and JSX. You'll also dive into powerful features like React Hooks, routing, and context API.
 
 By the end of this course, you'll be able to build dynamic, fast, and modern web applications using React — from simple components to full-scale projects.`,
-topic: "markting"
+    topic: "markting"
   },
   {
     id: 2,

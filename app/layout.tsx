@@ -1,20 +1,8 @@
-import { Geist, Geist_Mono, Cairo } from "next/font/google";
 import "./globals.css";
 import PageWrapper from "@/components/PageWrapper";
 import Header from "@/components/Header";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const cairo = Cairo({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 import { CookiesProvider } from "next-client-cookies/server";
 export default function RootLayout({
   children,

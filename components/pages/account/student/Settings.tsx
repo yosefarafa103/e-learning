@@ -13,6 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
 
 export default function Settings() {
   const [settings, setSettings] = useState({
@@ -23,14 +24,14 @@ export default function Settings() {
     emailNotifications: true,
     pushNotifications: false,
   });
-
-  const handleChange = (field, value) => {
+  const { t } = useTranslation()
+  function handleChange<T = string>(field: string, value: T) {
     setSettings({ ...settings, [field]: value });
   };
 
   return (
     <div className="space-y-3">
-      <h2 className="text-2xl font-semibold">Settings</h2>
+      <h2 className="text-2xl font-semibold text-foreground">  {t("dashboard.tabs.settings")} </h2>
 
       <Card className="rounded-2xl border shadow-sm">
         <CardContent className="p-6 space-y-4">

@@ -11,7 +11,7 @@ import FullHeading from "@/components/molecules/FullHeading";
 import { useRouter, useSearchParams } from "next/navigation";
 import ErrorBoundary from "@/components/atoms/ErrorBoundary";
 import { useTranslation } from "react-i18next";
-import Section from "@/components/molecules/Section";
+
 type DropDownItemData = { title: string; content: string[] };
 const ExploreCourses = () => {
   const { t } = useTranslation()
@@ -54,12 +54,12 @@ const ExploreCourses = () => {
         <SearchInput
           width="15"
           name="search-course"
-          placeholder="Search For All Courses"
+          placeholder={t('searchForAllCourses')}
         />
         <section className="flex items-center gap-2">
           {dropDownsData.map((el, idx) => (
             <DropdownMenu>
-              <DropdownMenuTrigger className="px-3 py-2 rounded-lg bg-background flex items-center gap-0.5">
+              <DropdownMenuTrigger className="px-3 py-2 rounded-lg bg-background flex items-center gap-0.5 max-sm:text-sm">
                 {t(`${el.title.toLowerCase()}.title`)} <ChevronDown />
 
               </DropdownMenuTrigger>

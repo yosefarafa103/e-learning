@@ -63,7 +63,10 @@
     "science": "علوم",
     "literature": "حصص تدريبية",
     "technology": "تكنولوجيا",
-    "mathematics": "رياضيات"
+    "mathematics": "رياضيات",
+    "high": "عالي",
+    "medium": "متوسط",
+    "low": "منخفض"
   },
   "role": "الدور",
   "doesntHave": "لا يوجد",
@@ -75,6 +78,7 @@
     "add": "إضافة",
     "update": "تحديث"
   },
+  "searchForAllCourses": "ما الذي تتطلع لتعلمة",
   "dashboard": {
     "tabs": {
       "dashboard": "لوحة التحكم",

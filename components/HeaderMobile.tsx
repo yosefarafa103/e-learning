@@ -26,7 +26,7 @@ const HeaderMobile = () => {
             <Menu className="sm:hidden cursor-pointer " />
           </Button>
         </CollapsibleTrigger>
-        <CollapsibleContent className="fixed top-[100px] right-0 w-full bg-background text-background z-10 ">
+        <CollapsibleContent className="fixed top-[75px] left-1/2 -translate-x-1/2 w-[98%]  bg-background text-background z-10 ">
           {isOpen && (
             <>
               {links.map((l) => (

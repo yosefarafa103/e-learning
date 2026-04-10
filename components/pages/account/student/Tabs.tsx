@@ -94,7 +94,7 @@ const TabsStudent = () => {
           </DropdownMenu>
         </>
       </div>
-      <div className="dark:border-muted border-transparent border rounded-xl text-gray-700 max-sm:hidde mt-5 p-5">
+      <div className="border-blue-900/50 border-2 rounded-xl text-gray-700 max-sm:hidde mt-5 p-5">
         <Suspense fallback={<Loader />}>
           {tabs.map((t) => active === t.id && t?.component)}
         </Suspense>

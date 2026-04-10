@@ -1,21 +1,22 @@
 import type { Course } from "@/types/courses";
 import Link from "next/link";
+import { Card, CardContent } from "../ui/card";
 
 const Course = ({ description, img, title, id }: Course) => {
   return (
-    <div className="flex flex-col relative min-h-[200px] w-full border rounded-2xl">
-      <div className="dark:bg-background rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
-        <div className="relative">
-          <div className="h-[200px] bg-[#eee] rounded-2xl m-4" />
-        </div>
 
-        <div className="p-6 flex flex-col gap-3">
+    <Card className="flex flex-col relative min-h-[250px] w-full">
+      <div className="relative -mt-3">
+        <div className="min-h-[200px] animate-pulse duration-500 dark:bg-muted bg-accent rounded-2xl m-4" />
+      </div>
+      <CardContent>
+        <div className="flex flex-col gap-3">
           <h3 className="text-lg font-bold text-gray-900 dark:text-white line-clamp-2">
             {title}
           </h3>
           {description && (
             <p className="text-gray-500 dark:text-gray-400 text-sm line-clamp-3">
-              {description}
+              {description.slice(0, 40)}
             </p>
           )}
           <Link
@@ -27,8 +28,8 @@ const Course = ({ description, img, title, id }: Course) => {
             عرض الكورس
           </Link>
         </div>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 };
 

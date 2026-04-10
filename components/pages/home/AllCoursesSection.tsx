@@ -8,11 +8,12 @@ import { useQuery } from "@tanstack/react-query";
 import Courses from "@/helpers/coursesData";
 import Loader from "@/components/atoms/Loader";
 import Heading from "@/components/atoms/Heading";
+import { CoursesData } from "@/constants/courses";
 
 const AllCoursesSection = () => {
   const { t } = useTranslation();
   const courses = new Courses();
-  const { data, isLoading } = useQuery({
+  const { data, isLoading, isError } = useQuery({
     queryFn: () => courses.getCoursesData(),
     queryKey: ["courses"],
     staleTime: 60_000,
@@ -24,7 +25,7 @@ const AllCoursesSection = () => {
       <Separator />
       {isLoading && <Loader />}
       <section className="my-5 grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-2">
-        {data?.courses?.map((el) => (
+        {data ? data?.courses?.map((el) => (
           <Course
             link=""
             id={parseInt(el._id!)}
@@ -32,7 +33,17 @@ const AllCoursesSection = () => {
             title={el.title}
             img={""}
           />
-        ))}
+        )) : isError ?
+          CoursesData.map((el) => (
+            <Course
+              link=""
+              id={(el.id)}
+              description={el.description}
+              title={el.title}
+              img={""}
+            />
+          ))
+          : null}
       </section>
     </>
   );

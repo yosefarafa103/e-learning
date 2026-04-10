@@ -1,11 +1,10 @@
-import { StaticImageData } from "next/image";
-import { ObjectId, Types } from 'mongoose';
+import { Types } from 'mongoose';
 import { IUser } from "./user";
 
 export interface Course {
   id: number | string;
   title: string;
-  img: string;
+  img: string | any;
   description?: string;
   link: string;
   overview?: string;

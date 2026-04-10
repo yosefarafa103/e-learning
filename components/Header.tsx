@@ -8,12 +8,13 @@ import React from "react";
 import ToggleTheme from "./ToggleTheme";
 import HeaderLinks from "./atoms/HeaderLinks";
 import ToggleLanguges from "./ToggleLanguges";
+import WrapperBody from "./WrapperBody";
 
 const Header = () => {
   return (
     <>
       <header
-        className={`py-3 fixed top-0 w-full flex justify-between bg-background px-5 sm:px-[5%] items-center z-[9999999] shadow-sm shadow-amber-50`}
+        className={`py-3 fixed top-0 w-full flex justify-between bg-background px-1.5 sm:px-[5%] items-center z-[9999999] shadow-sm shadow-amber-50`}
       >
         <section className="flex items-center gap-3 w-full max-sm:justify-between">
           <div className="center-flex">

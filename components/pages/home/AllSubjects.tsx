@@ -4,16 +4,16 @@ import Heading from "@/components/atoms/Heading";
 import Loader from "@/components/atoms/Loader";
 import SubjectCard from "@/components/atoms/SubjectCard";
 import { Separator } from "@/components/ui/separator";
+import { fakeSubjects } from "@/constants/general";
 import getSubjects from "@/helpers/getSubjects";
 import { ISubject } from "@/models/subjects.model";
 import { useQuery } from "@tanstack/react-query";
 import { t } from "i18next";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
 
 const AllSubjects = () => {
-  const { data, isLoading, isError, failureReason } = useQuery<ISubject[]>({
+  const { data, isLoading, isError } = useQuery<ISubject[]>({
     queryFn: getSubjects,
     queryKey: ["subjects"],
     staleTime: 60_000,
@@ -22,7 +22,6 @@ const AllSubjects = () => {
   const [filterSubjects, setFilterSubjects] = useState<ISubject[] | []>(data!);
   useEffect(() => {
     setFilterSubjects(
-      //
       data!?.filter((el) =>
         el.title.match(new RegExp(`${searchParams.get("subject") || ""}`))
       )
@@ -34,8 +33,13 @@ const AllSubjects = () => {
       <Separator />
       {isLoading && <Loader />}
       <GridWrapper>
-        {filterSubjects?.length &&
-          filterSubjects?.map((item) => <SubjectCard {...item} />)}
+        {data ?
+          filterSubjects?.map((item) => <SubjectCard {...item} />)
+          :
+          isError ?
+            fakeSubjects?.map((item) => <SubjectCard {...item} />)
+            : null
+        }
       </GridWrapper>
     </>
   );

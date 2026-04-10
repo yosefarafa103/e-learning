@@ -23,7 +23,7 @@ const page = async ({
           <>{studentDashboard}</>
         )}
       </section>
-      <section className="p-3">{children}</section>
+      {/* <section className="p-3">{children}</section> */}
     </>
   );
 };
