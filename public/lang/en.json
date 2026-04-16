@@ -5,10 +5,10 @@
   "level": {
     "title": "Level",
     "levels": {
-      "level1": "Level 1",
-      "level2": "Level 2",
-      "level3": "Level 3",
-      "level4": "Level 4"
+      "level1": "Level One",
+      "level2": "Level Two",
+      "level3": "Level Three",
+      "level4": "Level Four"
     }
   },
   "duration": {
@@ -16,13 +16,12 @@
   },
   "language": {
     "title": "Languages",
-    "sp": "Spain",
+    "sp": "Spanish",
     "en": "English",
     "ar": "Arabic"
   },
-  "browseCategory": "Browse by Category",
   "exploreCourses": "Explore Courses",
-  "perfectCourse": "Find The Perfect Course To Enhance Your Skills And Knowledge",
+  "perfectCourse": "Find the perfect course to enhance your skills and knowledge",
   "courses": "Courses",
   "explore": "Explore",
   "instructors": "Instructors",
@@ -33,9 +32,9 @@
   "content": "Content",
   "instructor": "Instructor",
   "reviews": "Student Reviews",
-  "collectCourse": "Collect Course",
-  "instructorSentins": "Meet trainers in various fields",
-  "myAccount": "Profile",
+  "collectCourse": "Save Course",
+  "instructorSentins": "Meet instructors across various fields",
+  "myAccount": "My Account",
   "logout": "Logout",
   "fullName": "Full Name",
   "email": "Email",
@@ -49,47 +48,66 @@
   "search": "Search",
   "showMore": "Show More",
   "showLess": "Show Less",
-  "bookCourse": "Buy This Course For:",
-  "commonQuestions": "Common Questions",
+  "bookCourse": "Buy this course for:",
+  "commonQuestions": "Frequently Asked Questions",
+
   "ourCommunity": {
     "title": "Our Community",
     "headPageTitle": "Our Community",
-    "headPageDescription": "Join the community to connect with students and teachers."
+    "headPageDescription": "Join the community to connect with students and instructors."
   },
-  "searchForAllCourses": "Search For All Courses",
-  "phone": "Phone",
+  "phone": "Phone Number",
   "subjects": {
     "title": "Subjects",
     "arts": "Arts",
     "science": "Science",
-    "literature": "Literature",
+    "literature": "Training Sessions",
     "technology": "Technology",
-    "mathematics": "Mathematics"
+    "mathematics": "Mathematics",
+    "high": "High",
+    "medium": "Medium",
+    "low": "Low"
   },
-
   "role": "Role",
-  "doesntHave": "Doesn't Have",
+  "doesntHave": "Not Available",
   "teacher": "Teacher",
   "editYourInfo": "Edit Your Information",
   "forms": {
     "required": "Required Field",
     "name": "Name",
     "add": "Add",
-    "update": "Update"
+    "update": "Update",
+    "type_your_message": "Type your message here",
+    "send": "Send"
   },
+  "searchForAllCourses": "What do you want to learn?",
   "dashboard": {
     "tabs": {
-      "courses": "My Courses",
       "dashboard": "Dashboard",
       "my_courses": "My Courses",
       "assignments": "Assignments",
       "messages": "Messages",
-      "charge": "My Charge",
+      "profile": "My Profile",
+      "courses": "My Courses",
+      "charge": "My Balance",
       "groups": "Groups",
-      "profile": "Profile",
       "settings": "Settings"
     },
-    "welcome": "Welcome, {{name}}"
+    "welcome": "Welcome, {{name}}",
+    "browseCourses": "Browse Courses",
+    "upcomming_assignments": "Upcoming Assignments",
+    "cardsContent": {
+      "activeCourses": "Active Courses",
+      "averageGrade": "Average Grade",
+      "assignmentsDue": "Assignments Rate",
+      "profile": "Profile",
+      "complete": "Completed"
+    },
+    "assignments_status": {
+      "pending": "Pending",
+      "completed": "Completed",
+      "inProgress": "In Progress"
+    }
   },
   "settings": {
     "title": "Instructor Settings",
@@ -101,30 +119,49 @@
     "bioPlaceholder": "Write something about yourself...",
     "saveChanges": "Save Changes",
     "saving": "Saving...",
-    "success": "Settings updated successfully ✨",
-    "error": "Failed to update settings 😔",
+    "success": "Settings updated successfully",
+    "error": "Failed to update settings",
     "userNotFound": "User not found!",
     "noChanges": "No changes detected.",
-    "loadError": "Failed to load user data."
+    "loadError": "Failed to load user data.",
+    "themes": {
+      "title": "Themes",
+      "dark": "Dark Mode",
+      "light": "Light Mode",
+      "system": "System Mode"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "email": {
+        "title": "Email Notifications",
+        "desc": "Receive assignment updates via email"
+      },
+      "push": {
+        "title": "Push Notifications",
+        "desc": "Get instant alerts on your device when changes occur"
+      }
+    }
   },
+  "browseCategory": "Browse Categories",
+
   "groups": {
     "title": "Groups",
     "addGroupButton": "Add Group",
     "dialogTitle": "Add New Group",
-    "noGroups": "No groups available yet."
+    "noGroups": "No groups yet."
   },
   "about": {
     "title": "About",
     "platform": "Platform",
-    "description": "We are an online learning platform that aims to empower learners to develop their skills online through interactive content, high-quality courses, and outstanding instructors across various fields. We believe learning is a continuous journey, and we provide you with the tools to achieve your educational and professional goals."
+    "description": "We are an online educational platform aiming to empower learners to develop their skills through interactive content, high-quality courses, and expert instructors across various fields. We believe learning is a continuous journey, and we provide the tools to help you achieve your educational and career goals."
   },
   "statistics": {
-    "title": "Platform",
-    "platform": "Statistics",
-    "students": "Registered Students ",
-    "courses": "Training Courses ",
-    "instructors": "Expert Instructors ",
-    "rating": "User Rating "
+    "title": "Statistics",
+    "platform": "Platform",
+    "students": "Registered Students",
+    "courses": "Training Courses",
+    "instructors": "Expert Instructors",
+    "rating": "User Ratings"
   },
   "footer": {
     "importantLinks": "Important Links",
@@ -132,9 +169,22 @@
     "terms": "Terms & Conditions",
     "support": "Technical Support",
     "contactUs": "Contact Us",
-    "aboutPlatform": "About the Platform",
-    "aboutDescription": "We are an online learning platform that aims to empower learners to develop their skills through interactive content and expert instructors across various fields.",
-    "rights": "All rights reserved for",
-    "platformName": "Taallamak"
+    "aboutPlatform": "About Platform",
+    "aboutDescription": "We are an online educational platform that empowers learners to develop their skills through interactive content and expert instructors.",
+    "rights": "All rights reserved to",
+    "platformName": "Ta3lomak"
+  },
+  "profile_sections": {
+    "academicInfo": "Academic Information",
+    "year": "Year",
+    "gpa": "GPA",
+    "major": "Major",
+    "courses": {
+      "completedCourses": "Completed Courses",
+      "courseCompletion": "Course Completion",
+      "overallProgress": "Overall Progress"
+    },
+    "contactInformation": "Contact Information",
+    "performance": "Performance"
   }
 }

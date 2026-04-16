@@ -38,3 +38,38 @@ By the end of this course, you'll be able to build dynamic, fast, and modern web
     img,
   },
 ];
+export const dashboardFakeCourses =
+  [
+    {
+      id: 1,
+      title: "Computer Science 101",
+      instructor: "Dr. Ahmed Ali",
+      progress: 80,
+      image:
+        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=60",
+    },
+    {
+      id: 2,
+      title: "Frontend Engineering",
+      instructor: "Eng. Salma Hassan",
+      progress: 45,
+      image:
+        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=60",
+    },
+    {
+      id: 3,
+      title: "Database Management Systems",
+      instructor: "Dr. Omar Mahmoud",
+      progress: 100,
+      image:
+        "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=60",
+    },
+    {
+      id: 4,
+      title: "Artificial Intelligence Basics",
+      instructor: "Dr. Sarah Ibrahim",
+      progress: 20,
+      image:
+        "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=60",
+    },
+  ]

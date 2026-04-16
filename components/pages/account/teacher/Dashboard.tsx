@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from "react";
 import AddNewCourseDialog from "../../coursePage/AddNewCourseForm";
 import { MobileNavDropdown } from "./MobileNavDropDown";

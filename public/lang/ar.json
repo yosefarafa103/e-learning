@@ -71,12 +71,14 @@
   "role": "الدور",
   "doesntHave": "لا يوجد",
   "teacher": "مدرس",
-  "editYourInfo": "تعديل معلوماتك",
+  "editYourInfo": "تعديل معلوماتك الشخصية",
   "forms": {
     "required": "حقل مطلوب",
     "name": "الاسم",
     "add": "إضافة",
-    "update": "تحديث"
+    "update": "تحديث",
+    "type_your_message": "اكتب رسالتك هنا",
+    "send": "ارسال"
   },
   "searchForAllCourses": "ما الذي تتطلع لتعلمة",
   "dashboard": {
@@ -105,7 +107,9 @@
       "pending": "معلق",
       "completed": "منتهي",
       "inProgress": "تحت الانجاز"
-    }
+    },
+    "student": "الطالب",
+    "teacher": "مدرس"
   },
   "settings": {
     "title": "إعدادات المدرب",
@@ -121,7 +125,24 @@
     "error": "فشل في تحديث الإعدادات ",
     "userNotFound": "المستخدم غير موجود!",
     "noChanges": "لم يتم اكتشاف أي تغييرات.",
-    "loadError": "فشل في تحميل بيانات المستخدم."
+    "loadError": "فشل في تحميل بيانات المستخدم.",
+    "themes": {
+      "title": "الثيمات",
+      "dark": "الوضع المظلم",
+      "light": "الوضع النهاري",
+      "system": "وضع النظام"
+    },
+    "notifications": {
+      "title": "الاشعارات",
+      "email": {
+        "title": "ارسال الاشعارات عبر البريد الالكتروني",
+        "desc": "استلم اخر تحديثات الواجبات عبر البريد الالكتروني"
+      },
+      "push": {
+        "title": "ارسال الاشعارات",
+        "desc": "احصل علي اشعار مباشر في جهازك حال حدوث اي تغيير"
+      }
+    }
   },
   "browseCategory": "تصفح الاقسام",
 
@@ -154,5 +175,54 @@
     "aboutDescription": "نحن منصة تعليمية إلكترونية تهدف إلى تمكين المتعلمين من تطوير مهاراتهم عبر الإنترنت من خلال محتوى تفاعلي وأساتذة متميزين في مختلف المجالات.",
     "rights": "جميع الحقوق محفوظة لمنصة",
     "platformName": "تعلمك"
+  },
+  "profile_sections": {
+    "academicInfo": "التعليم الجامعي",
+    "year": "السنة",
+    "gpa": "التقيم",
+    "major": "التخصص",
+    "courses": {
+      "completedCourses": "عدد الدورات التي انهيتها",
+      "courseCompletion": "دورة منتهي منها بنسبة",
+      "overallProgress": "معدل التقدم",
+      "continue_course": "استمرار الدورة",
+      "showCertificate": "عرض الشهادة"
+    },
+    "contactInformation": "معلومات التواصل",
+    "performance": "الاداء"
+  },
+  "assignments": {
+    "assignment": "واجب",
+    "quiz": "اختبار",
+    "instructions": "التعليمات",
+    "submission": "التسليم",
+    "noGrade": "لم يتم التصحيح بعد",
+    "submitted": "تم التسليم بنجاح",
+    "grade": "الدرجة",
+    "searchAnAssignment": "البحث عن واجب معين ...",
+    "selectTitle": "اختر واجب من الواجبات لعرض التفاصيل",
+    "assignmentStatus": "حالة الواجب",
+    "notFoundAssignment": "لم يتم العثور علي الواجب",
+    "notFoundAssignmentDesc": "حاول تعديل البحث او الفلتر لتحصل علي النتيجة المرجوة",
+    "start_now": "ابدأ الان",
+    "showSubmission": "عرض الواجب المحلول",
+    "type": "النوع",
+    "due": "مهلة الاختبار",
+
+    "filter": {
+      "title": "فلترة",
+      "all": "الكل",
+      "submitted": "تم تسليمة",
+      "pending": "معلق",
+      "graded": "مصحح",
+      "completed": "مصحح",
+      "in_progress": "تحت الانجاز",
+      "filter_by_status": "فلترة عن طريق حالة الواجب"
+    },
+    "layouts": {
+      "parentLayout": "لوحه ولي الامر",
+      "teacherLayout": "لوحة المدرس",
+      "studentLayout": "لوحه الطالب"
+    }
   }
 }

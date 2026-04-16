@@ -1,7 +1,6 @@
 "use client";
 import GridWrapper from "@/components/atoms/GridWrapper";
 import Heading from "@/components/atoms/Heading";
-import Loader from "@/components/atoms/Loader";
 import SubjectCard from "@/components/atoms/SubjectCard";
 import { Separator } from "@/components/ui/separator";
 import { fakeSubjects } from "@/constants/general";
@@ -13,7 +12,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const AllSubjects = () => {
-  const { data, isLoading, isError } = useQuery<ISubject[]>({
+  const { data, } = useQuery<ISubject[]>({
     queryFn: getSubjects,
     queryKey: ["subjects"],
     staleTime: 60_000,
@@ -31,15 +30,8 @@ const AllSubjects = () => {
     <>
       <Heading title={t("subjects.title")} />
       <Separator />
-      {isLoading && <Loader />}
       <GridWrapper>
-        {data ?
-          filterSubjects?.map((item) => <SubjectCard {...item} />)
-          :
-          isError ?
-            fakeSubjects?.map((item) => <SubjectCard {...item} />)
-            : null
-        }
+        {fakeSubjects?.map((item) => <SubjectCard {...item} />)}
       </GridWrapper>
     </>
   );

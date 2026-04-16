@@ -38,21 +38,16 @@ const ProfileInfo = () => {
       return null;
     }
   }
-  const [tabs, setTabs] = useState(["Role", "Email", "Phone"]);
+  const [tabs, setTabs] = useState<string[]>(["Role", "Email", "Phone"]);
   const { dir } = useDirection();
   const { user } = useLoggedInUser();
   const { data, isLoading } = useQuery({
     // @ts-ignore
-    queryFn: async () => await getSignInUserClientComponent(),
+    queryFn: getSignInUserClientComponent,
     queryKey: ["loggedInUser"],
   });
   useEffect(() => {
-    {
-      /* @ts-ignore */
-    }
-    if (data?.role === "teacher") {
-      setTabs([...tabs, "Subjects"]);
-    }
+    if (data?.role === "teacher") setTabs([...tabs, "Subjects"]);
   }, [data]);
   return (
     <WrapperBody>
@@ -63,19 +58,20 @@ const ProfileInfo = () => {
           )} border-blue-500`}
         >
           Profile Info
-          <Dialog modal>
-            <DialogTrigger className="cursor-pointer">
-              <Edit />
-            </DialogTrigger>
-            <DialogContent>
-              <DialogTitle>
-                {t("editYourInfo")}
-                <Separator className="mt-4" />
-              </DialogTitle>
-              {/* @ts-ignore */}
-              <UpdatInformationForm userId={data?._id} />
-            </DialogContent>
-          </Dialog>
+          {!data ? null :
+            <Dialog modal>
+              <DialogTrigger className="cursor-pointer">
+                <Edit />
+              </DialogTrigger>
+              <DialogContent>
+                <DialogTitle>
+                  {t("editYourInfo")}
+                  <Separator className="mt-4" />
+                </DialogTitle>
+                <UpdatInformationForm userId={data._id} />
+              </DialogContent>
+            </Dialog>
+          }
         </h3>
         <Separator />
         <div className="flex mt:4 sm:mt-10 sm:gap-10 max-sm:flex-col">
@@ -87,13 +83,12 @@ const ProfileInfo = () => {
             className="rounded-[50%] my-4"
           />
           <div className="flex flex-col gap-2 pt-5 w-full">
-            {/* @ts-ignore */}
-            <h4> {data?.name || ""} </h4>
+            <h4> {data?.name} </h4>
             {isLoading ? (
               <Loader />
             ) : (
               <div className="flex sm:items-center gap-5 w-full max-sm:flex-col">
-                {tabs?.map((el, i) => (
+                {tabs.map((el, i) => (
                   <>
                     <div className="flex flex-col sm:mt-4 flex-1">
                       <h5 className="text-muted-foreground font-light">
@@ -101,21 +96,22 @@ const ProfileInfo = () => {
                       </h5>
                       <section className="flex items-center gap-2 mt-3 flex-wrap">
                         {
-                          //@ts-ignore
                           data?.subjects &&
-                            i === 3 &&
-                            data?.subjects?.map((el) => <Badge> {el} </Badge>)
+                          i === 3 &&
+                          data?.subjects?.map((el) => <Badge> {el} </Badge>)
                         }
                       </section>
                       <p>
-                        {/* @ts-ignore */}
-                        {data?.[el.toLowerCase()] &&
-                        el.toLowerCase() !== "subjects"
-                          ? t(data?.[el.toLowerCase()]) || ""
-                          : el.toLowerCase() !== "subjects" &&
+                        {data ?
+                          data[el.toLowerCase() as keyof typeof data] &&
+                            el.toLowerCase() !== "subjects"
+                            ? t(data[el.toLowerCase() as keyof typeof data] as string)
+                            : el.toLowerCase() !== "subjects" &&
                             `${data?.name} ${t("doesntHave")} ${t(
                               el.toLowerCase()
-                            )}`}
+                            )}`
+                          : null}
+                        {/* @ts-ignore */}
                       </p>
                     </div>
                     {i < tabs.length - 1 && <Separator className="sm:hidden" />}

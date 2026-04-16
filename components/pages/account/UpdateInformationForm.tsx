@@ -1,10 +1,8 @@
 "use client";
-import { useState } from "react";
 import { toast } from "sonner";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -17,19 +15,26 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useMutation } from "@tanstack/react-query";
-import { IUser } from "@/types/user";
+import { IUser, User } from "@/types/user";
 import { jwtDecode } from "jwt-decode";
 import { getCookie } from "cookies-next";
 import axios, { AxiosResponse } from "axios";
+import { BASE_URL } from "@/constants/general";
 const formSchema = z.object({
-  name: z.string({ error: "Please Fill" }).min(1),
-  subject: z.string({ error: "Please Fill" }).min(1),
+  name: z.string({ error: "Please Fill Name" }).min(1),
+  subject: z.string({ error: "Please Fill Subjects" }).min(1),
+  email: z.email({ error: "Please Fill Your Email", }),
+  password: z.string({ error: "Please Fill Your Password", }),
+  role: z.array(),
+  createdAt: z.date(),
+  updatedAt: z.date(),
+  imgProfile: z.date(),
 });
 export default function UpdatInformationForm({ userId }: { userId: string }) {
   async function UpdateUser(id: string, user: Partial<IUser>) {
     try {
       const response: AxiosResponse<{ user: IUser }> = await axios.patch(
-        `https://e-learning-eight-tau.vercel.app/api/auth/users/${id}`,
+        `${BASE_URL}/api/auth/users/${id}`,
         user
       );
       return response.data;
@@ -38,9 +43,9 @@ export default function UpdatInformationForm({ userId }: { userId: string }) {
       return null;
     }
   }
+
   const { mutate, isPending } = useMutation({
-    //  @ts-ignore
-    mutationFn: (data) => UpdateUser(userId, data),
+    mutationFn: (data: Partial<User>) => UpdateUser(userId, data),
   });
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -48,8 +53,6 @@ export default function UpdatInformationForm({ userId }: { userId: string }) {
   function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       const user = jwtDecode(getCookie("token") as string);
-      // MUTATION
-      //  @ts-ignore
       mutate(values);
       toast.success("Done!");
     } catch (error) {
@@ -57,6 +60,7 @@ export default function UpdatInformationForm({ userId }: { userId: string }) {
       toast.error("Failed to submit the form. Please try again.");
     }
   }
+
   return (
     <Form {...form}>
       <form
@@ -95,7 +99,7 @@ export default function UpdatInformationForm({ userId }: { userId: string }) {
             </FormItem>
           )}
         />
-        <Button type="submit"> {isPending ? "Updating.." : "Update"} </Button>
+        <Button type="submit"> {isPending ? "Updating.." : "Update"}</Button>
       </form>
     </Form>
   );

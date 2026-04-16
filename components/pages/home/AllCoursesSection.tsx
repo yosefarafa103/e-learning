@@ -23,27 +23,16 @@ const AllCoursesSection = () => {
     <>
       <Heading title={t("allCourses")} />
       <Separator />
-      {isLoading && <Loader />}
       <section className="my-5 grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-2">
-        {data ? data?.courses?.map((el) => (
+        {CoursesData.map((el) => (
           <Course
             link=""
-            id={parseInt(el._id!)}
+            id={(el.id)}
             description={el.description}
             title={el.title}
             img={""}
           />
-        )) : isError ?
-          CoursesData.map((el) => (
-            <Course
-              link=""
-              id={(el.id)}
-              description={el.description}
-              title={el.title}
-              img={""}
-            />
-          ))
-          : null}
+        ))}
       </section>
     </>
   );

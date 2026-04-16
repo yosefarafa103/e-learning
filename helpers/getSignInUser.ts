@@ -1,5 +1,4 @@
 import { IUser } from "@/types/user";
-import axios, { Axios, AxiosResponse } from "axios";
 import { cookies } from "next/headers";
 import jwt from "jsonwebtoken";
 import { getCurrentUser } from "@/services/users";

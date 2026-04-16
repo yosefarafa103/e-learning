@@ -44,6 +44,6 @@ export interface IPost {
   createdAt?: Date;
   updatedAt?: Date;
 }
-
+export type CourseStatus = "Completed" | "In Progress" | "Pending"
 
 export interface CoursesResponse { courses: ICourse[] }

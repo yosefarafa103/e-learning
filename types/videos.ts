@@ -135,7 +135,7 @@ export interface YouTubeChannelListResponse {
     resultsPerPage: number;
   };
   items: YouTubeChannel[];
-}
+};
 
 export interface YouTubeChannel {
   kind: string;
